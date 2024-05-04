@@ -118,6 +118,7 @@ const TipWrapper = styled.div`
   align-items: center;
 
   margin-top: 40px;
+  margin-bottom: 100px;
 
   font-size: 12px;
   font-weight: 500;
@@ -145,35 +146,12 @@ const ContentWrapper = styled.div`
     text-align: center;
     margin-bottom: 10px;
   }
-
-  button {
-    width: 70px;
-    height: 35px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 25px;
-    background-color: #7c9c80;
-    color: white;
-    font-weight: bold;
-    font-size: 12px;
-    box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.5);
-
-    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
-      width: 120px;
-      height: 55px;
-      margin-top: 50px;
-      font-size: 20px;
-      border-radius: 40px;
-    }
-
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-      width: 95px;
-      height: 42px;
-      margin-top: 35px;
-      font-size: 15px;
-      border-radius: 40px;
-    }
-  }
 `;
 
-export { Container, IconWrapper, Icon, IconBlack, TipIcon, Cam, ContentWrapper, TipWrapper };
+const ContentContainer = styled.div`
+  position: relative;
+  display: grid;
+  place-items: center;
+`;
+
+export { Container, IconWrapper, Icon, IconBlack, TipIcon, Cam, ContentWrapper, TipWrapper, ContentContainer };
