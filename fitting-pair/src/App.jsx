@@ -13,27 +13,27 @@ const router = createBrowserRouter([
         element: <Homepage />,
       },
       {
-        path: "signup",
+        path: "sign-up",
         element: <SignUpPage />,
       },
       { path: "login", element: <LoginPage /> },
 
       {
-        path: "bodyCheck",
+        path: "body-check",
         element: <BodyCheckPage />,
       },
     ],
   },
   {
-    path: "/",
+    path: "/body-check",
     element: <StylingLayout />,
     children: [
       {
-        path: "result",
+        path: "result", // 이후 result/:userid 등으로 변경 가능성 o !!
         element: <ResultPage />,
       },
       {
-        path: "styling",
+        path: "result/styling",
         element: <StylingPage />,
       },
     ],
