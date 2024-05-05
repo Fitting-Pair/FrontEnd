@@ -9,9 +9,21 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+    width: 550px;
+    height: 550px;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+    width: 550px;
+    height: 550px;
+  }
 `;
 
 const WebCam = styled.video`
+  width: 550px;
+  height: 550px;
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
 
