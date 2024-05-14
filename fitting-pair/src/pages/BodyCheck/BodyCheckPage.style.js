@@ -1,10 +1,8 @@
 import styled from "styled-components";
+import theme from "../../styles/theme";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${theme.ALIGN.COLUMN_CENTER};
 `;
 
 const IconWrapper = styled.div`
@@ -15,9 +13,7 @@ const IconWrapper = styled.div`
 `;
 
 const Icon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${theme.ALIGN.ROW_CENTER};
   width: 100px;
   height: 33px;
   background-color: white;
@@ -26,7 +22,7 @@ const Icon = styled.div`
   padding: 10px;
   margin: 6px;
 
-  font-weight: bold;
+  font-family: ${theme.FONT.ROBOTO_MEDIUM};
 
   img {
     margin-right: 10px;
@@ -64,6 +60,7 @@ const IconBlack = styled(Icon)`
 `;
 
 const TipIcon = styled(Icon)`
+  font-family: ${theme.FONT.ROBOTO_MEDIUM};
   width: 80px;
   height: 31px;
 
@@ -141,6 +138,7 @@ const ContentWrapper = styled.div`
   align-items: center;
 
   margin-top: 10px;
+  font-family: ${theme.FONT.INTER_REGULAR};
 
   span {
     text-align: center;

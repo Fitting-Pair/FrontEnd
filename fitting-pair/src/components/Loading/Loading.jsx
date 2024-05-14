@@ -1,5 +1,5 @@
 import * as S from "./Loading.style";
-import Spinning from "../../assets/spinning.png";
+import Spinning from "../../assets/images/spinning.png";
 
 const Loading = () => {
   return (
