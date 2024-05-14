@@ -38,8 +38,8 @@ const FONT = {
 };
 
 const WINDOW_SIZE = {
-  // MOBILE: `screen and (max-width: ${RESPONSIVE_SIZE.MOBILE})`,
-  // TABLET: `screen and (max-width: ${RESPONSIVE_SIZE.TABLET})`,
+  MOBILE: `screen and (max-width: ${RESPONSIVE_SIZE.MOBILE})`,
+  TABLET: `screen and (max-width: ${RESPONSIVE_SIZE.TABLET})`,
   IPAD_PRO: `screen and (max-width: ${RESPONSIVE_SIZE.IPAD_PRO})`,
 };
 

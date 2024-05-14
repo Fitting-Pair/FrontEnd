@@ -22,6 +22,11 @@ const Container = styled.div`
       font-size: 14px;
       padding: 10px 23px;
     }
+
+    @media ${theme.WINDOW_SIZE.MOBILE} {
+      font-size: 11px;
+      padding: 8px 19px;
+    }
   }
 `;
 
@@ -34,6 +39,11 @@ const LogoWrapper = styled.div`
 
     @media ${theme.WINDOW_SIZE.IPAD_PRO} {
       width: 100%;
+    }
+
+    @media ${theme.WINDOW_SIZE.MOBILE} {
+      width: 75%;
+      margin-bottom: 30px;
     }
   }
 `;
@@ -50,6 +60,11 @@ const Text = styled.div`
     @media ${theme.WINDOW_SIZE.IPAD_PRO} {
       font-size: 20px;
       margin-bottom: 23px;
+    }
+
+    @media ${theme.WINDOW_SIZE.MOBILE} {
+      font-size: 12px;
+      margin-bottom: 20px;
     }
   }
 `;
