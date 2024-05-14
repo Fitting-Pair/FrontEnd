@@ -1,3 +1,5 @@
+import { RESPONSIVE_SIZE } from "../constants/size";
+
 const COLOR = {
   ORANGE: "#FFC791",
   GREEN: "#7C9C80",
@@ -35,6 +37,12 @@ const FONT = {
   ROBOTO_BOLD: "Roboto-Bold",
 };
 
-const theme = { COLOR, ALIGN, FONT };
+const WINDOW_SIZE = {
+  // MOBILE: `screen and (max-width: ${RESPONSIVE_SIZE.MOBILE})`,
+  // TABLET: `screen and (max-width: ${RESPONSIVE_SIZE.TABLET})`,
+  IPAD_PRO: `screen and (max-width: ${RESPONSIVE_SIZE.IPAD_PRO})`,
+};
+
+const theme = { COLOR, ALIGN, FONT, WINDOW_SIZE };
 
 export default theme;
