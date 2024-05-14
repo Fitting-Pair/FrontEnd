@@ -2,6 +2,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import FittingLayout from "./layout/FittingLayout/FittingLayout";
 import StylingLayout from "./layout/StylingLayout/StylingLayout";
 import { BodyCheckPage, Homepage, LoginPage, ResultPage, SignUpPage, StylingPage } from "./pages";
+import { ThemeProvider } from "styled-components";
+import theme from "./styles/theme";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +50,11 @@ function App() {
 
   window.addEventListener("resize", () => setScreenSize());
 
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
 export default App;

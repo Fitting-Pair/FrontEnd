@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as S from "./Webcam.style";
 import { useNavigate } from "react-router-dom";
+import CamImg from "../../assets/images/camera_img.webp";
 
 const Webcam = () => {
   const nav = useNavigate();
@@ -88,9 +89,9 @@ const Webcam = () => {
         <S.Canvas ref={canvasRef} $showCanvas={showCanvas} />
       </S.Container>
       {showCam ? (
-        <S.Button onClick={handleClick}>{count === 5 ? "촬영" : count}</S.Button>
+        <S.Button onClick={handleClick}>{count === 5 ? <img src={CamImg} /> : count}</S.Button>
       ) : (
-        <S.Button onClick={() => nav("/result", { replace: true })}>next</S.Button>
+        <S.Button onClick={() => nav("/body-check/result")}>next</S.Button>
       )}
     </div>
   );

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../styles/theme";
 
 const Container = styled.div`
   width: 350px;
@@ -54,7 +55,13 @@ const Button = styled.div`
   font-size: 12px;
   box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.5);
 
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 27%;
+  }
 `;
 
 export { Container, WebCam, Canvas, Button };

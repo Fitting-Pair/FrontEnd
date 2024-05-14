@@ -1,8 +1,8 @@
 import * as S from "./BodyCheckPage.style";
-import checkImg from "../../assets/check.png";
-import clothImg from "../../assets/cloth.png";
-import penImg from "../../assets/pen.png";
-import tipImg from "../../assets/tip.png";
+import checkImg from "../../assets/images/check.png";
+import clothImg from "../../assets/images/cloth.png";
+import penImg from "../../assets/images/pen.png";
+import tipImg from "../../assets/images/tip.png";
 import Webcam from "../../components/Webcam/Webcam";
 
 const BodyCheckPage = () => {
