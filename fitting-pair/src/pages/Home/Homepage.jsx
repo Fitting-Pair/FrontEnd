@@ -6,6 +6,15 @@ import { useNavigate } from "react-router-dom";
 const Homepage = () => {
   const nav = useNavigate();
 
+  const handleClick = () => {
+    if (window.innerWidth <= 600) {
+      // 모바일
+      nav("/login");
+    } else {
+      nav("/sign-up");
+    }
+  };
+
   return (
     <S.Container>
       <S.LogoWrapper>
@@ -17,7 +26,7 @@ const Homepage = () => {
           recommends clothing through CV and AI.
         </p>
       </S.Text>
-      <button onClick={() => nav("/sign-up")}>
+      <button onClick={handleClick}>
         START
         <img src={START_IMG} />
       </button>

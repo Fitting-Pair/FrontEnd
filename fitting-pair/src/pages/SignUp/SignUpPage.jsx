@@ -37,7 +37,7 @@ const SignUpPage = () => {
         <Input text={"Height"} icon={Ruler} half={true} />
       </S.Wrapper>
 
-      <Submit text={"SUBMIT"} half={false} />
+      <Submit text={"SUBMIT"} width={"530px"} />
       <S.GoLogin>
         Do you have id ?<Link to="/login">Login</Link>
       </S.GoLogin>

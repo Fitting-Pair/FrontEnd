@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "../../styles/theme";
 
 const Container = styled.button`
-  width: ${(props) => (props.$half ? "265px" : "530px")};
+  width: ${(props) => props.width};
   height: 50px;
   background-color: ${theme.COLOR.GREEN};
   color: #fff;
@@ -14,7 +14,7 @@ const Container = styled.button`
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
   @media ${theme.WINDOW_SIZE.MOBILE} {
-    width: 240px;
+    width: ${(props) => (props.$login ? "268px" : "240px")};
     height: 40px;
   }
 `;
