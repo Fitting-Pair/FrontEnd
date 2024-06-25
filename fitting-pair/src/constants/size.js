@@ -1,5 +1,5 @@
 const RESPONSIVE_SIZE = {
-  MOBILE: "600px",
+  MOBILE: "480px",
   TABLET: "768px",
   IPAD_PRO: "1024px",
 };

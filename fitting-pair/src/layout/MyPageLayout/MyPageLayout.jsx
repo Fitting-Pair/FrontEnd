@@ -4,7 +4,9 @@ import * as S from "./MyPageLayout.style";
 const MyPageLayout = () => {
   return (
     <S.Container>
-      <Outlet />
+      <S.OutletContainer>
+        <Outlet />
+      </S.OutletContainer>
     </S.Container>
   );
 };
