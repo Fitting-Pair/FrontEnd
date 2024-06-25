@@ -31,6 +31,7 @@ const ButtonBox = styled.div`
   margin: 16px;
 
   hr {
+    z-index: 2;
     width: 1px;
     height: 100%;
     background: ${theme.COLOR.GRAY};
@@ -48,10 +49,6 @@ const ButtonBox = styled.div`
     width: 110px;
     height: 40px;
     margin: 16px 10px;
-
-    img {
-      width: 15px;
-    }
   }
 `;
 
