@@ -14,7 +14,7 @@ const IconWrapper = styled.div`
 
 const Icon = styled.div`
   ${theme.ALIGN.ROW_CENTER};
-  width: 10px;
+  width: 100px;
   height: 33px;
   background-color: white;
   border-radius: 20px;
