@@ -1,9 +1,10 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import FittingLayout from "./layout/FittingLayout/FittingLayout";
 import StylingLayout from "./layout/StylingLayout/StylingLayout";
-import { BodyCheckPage, Homepage, LoginPage, ResultPage, SignUpPage, StylingPage } from "./pages";
+import { BodyCheckPage, Homepage, LoginPage, MyPage, ResultPage, SignUpPage, StylingPage } from "./pages";
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
+import MyPageLayout from "./layout/MyPageLayout/MyPageLayout";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,16 @@ const router = createBrowserRouter([
       {
         path: "styling/result",
         element: <StylingPage />,
+      },
+    ],
+  },
+  {
+    path: "/my-page",
+    element: <MyPageLayout />,
+    children: [
+      {
+        index: true,
+        element: <MyPage />,
       },
     ],
   },
