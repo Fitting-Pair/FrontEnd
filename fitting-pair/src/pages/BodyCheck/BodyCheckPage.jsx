@@ -1,27 +1,12 @@
 import * as S from "./BodyCheckPage.style";
-import checkImg from "../../assets/images/check.png";
-import clothImg from "../../assets/images/cloth.png";
-import penImg from "../../assets/images/pen.png";
 import tipImg from "../../assets/images/tip.png";
 import Webcam from "../../components/Webcam/Webcam";
+import { Icon } from "../../components";
 
 const BodyCheckPage = () => {
   return (
     <S.Container>
-      <S.IconWrapper>
-        <S.IconBlack>
-          <img src={penImg} />
-          Body Check
-        </S.IconBlack>
-        <S.Icon>
-          <img src={clothImg} />
-          Styling
-        </S.Icon>
-        <S.Icon>
-          <img src={checkImg} />
-          Result
-        </S.Icon>
-      </S.IconWrapper>
+      <Icon blackNum={1} />
       <S.ContentContainer>
         <Webcam />
         <S.TipWrapper>

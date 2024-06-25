@@ -31,11 +31,11 @@ const router = createBrowserRouter([
     element: <StylingLayout />,
     children: [
       {
-        path: "result", // 이후 result/:userid 등으로 변경 가능성 o !!
+        path: "styling", // user id 넣어서 수정해야함
         element: <ResultPage />,
       },
       {
-        path: "result/styling",
+        path: "styling/result",
         element: <StylingPage />,
       },
     ],

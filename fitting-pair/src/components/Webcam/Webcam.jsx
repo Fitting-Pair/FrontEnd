@@ -91,7 +91,7 @@ const Webcam = () => {
       {showCam ? (
         <S.Button onClick={handleClick}>{count === 5 ? <img src={CamImg} /> : count}</S.Button>
       ) : (
-        <S.Button onClick={() => nav("/body-check/result")}>next</S.Button>
+        <S.Button onClick={() => nav("/body-check/styling")}>next</S.Button>
       )}
     </div>
   );
