@@ -5,5 +5,6 @@ import StylingPage from "./Styling/StylingPage";
 import ResultPage from "./Result/ResultPage";
 import BodyCheckPage from "./BodyCheck/BodyCheckPage";
 import MyPage from "./MyPage/MyPage";
+import MoblieResultPage from "./Result/Mobile/MoblieResultPage";
 
-export { Homepage, LoginPage, SignUpPage, StylingPage, ResultPage, BodyCheckPage, MyPage };
+export { Homepage, LoginPage, SignUpPage, StylingPage, ResultPage, BodyCheckPage, MyPage, MoblieResultPage };
