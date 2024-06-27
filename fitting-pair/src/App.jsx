@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         element: <MyPage />,
       },
       {
-        path: "result",
+        path: "result/:id", // id 임의 지정 이후 수정
         element: <MoblieResultPage />,
       },
       {

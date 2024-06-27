@@ -3,7 +3,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import LogOut from "../../../assets/images/door.png";
 import { useNavigate } from "react-router-dom";
 
-const MoblieIcon = () => {
+const MoblieIcon = ({ text }) => {
   const navigation = useNavigate();
   const handleLogout = () => {
     // 로그아웃 로직
@@ -11,12 +11,10 @@ const MoblieIcon = () => {
     navigation("/", { replace: true });
   };
 
-  const date = "MAY, 13TH";
-
   return (
     <S.Container>
-      <FaArrowLeft onClick={() => navigation("../")} />
-      <div>{date}</div>
+      <FaArrowLeft onClick={() => navigation(-1)} />
+      <div>{text}</div>
       <img src={LogOut} onClick={handleLogout} />
     </S.Container>
   );
