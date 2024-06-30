@@ -13,14 +13,15 @@ const MyPage = () => {
     <S.Container>
       <S.ContentMyPageContainer>
         <S.MyPageWrapper>
-            MYPAGE
+          <S.MyPage>
+            <div style={{ alignSelf: 'center' }}>
+              MYPAGE
+            </div>
+              <button onClick={MyPage}>
+                <img src={Logout} />
+              </button>
+          </S.MyPage>
         </S.MyPageWrapper>
-        
-        <S.LogoutIcon>
-          <button onClick={MyPage}>
-            <img src={Logout} />
-          </button>
-        </S.LogoutIcon>
 
         <S.MyResultWrapper>
           <S.MyResultTitle>
