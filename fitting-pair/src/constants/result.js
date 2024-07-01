@@ -29,4 +29,63 @@ const SelectedApparel = [
   },
 ];
 
-export { textResult, SelectedApparel };
+const result = [
+  {
+    id: 0,
+    date: "MAY, 15th",
+    text: textResult,
+    cloth: SelectedApparel,
+  },
+  {
+    id: 1,
+    date: "April, 10th",
+    text: textResult,
+    cloth: [
+      {
+        id: 1,
+        url: "https://www.musinsa.com/app/goods/2507613",
+        image: "/images/cloth.png",
+      },
+      {
+        id: 2,
+        url: "https://www.musinsa.com/app/goods/2507613",
+        image: "/images/cloth2.png",
+      },
+      {
+        id: 3,
+        url: "https://www.musinsa.com/app/goods/2507613",
+        image: "/images/cloth.png",
+      },
+    ],
+  },
+  {
+    id: 2,
+    date: "MAY, 15th",
+    text: textResult,
+    cloth: [
+      {
+        id: 1,
+        url: "https://www.musinsa.com/app/goods/2507613",
+        image: "/images/cloth.png",
+      },
+      {
+        id: 2,
+        url: "https://www.musinsa.com/app/goods/2507613",
+        image: "/images/cloth2.png",
+      },
+      {
+        id: 3,
+        url: "https://www.musinsa.com/app/goods/2507613",
+        image: "/images/cloth2.png",
+      },
+    ],
+  },
+  {
+    id: 4,
+    date: "MAY, 14th",
+    text: textResult,
+    cloth: SelectedApparel,
+  },
+];
+
+export { textResult, SelectedApparel, result };
