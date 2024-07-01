@@ -5,44 +5,16 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(20deg, #b0cfb2, #f6ae7c);
-  overflow: hidden;
-`;
-
-const MyPageWrapper = styled.div`
-  width: 100%;
   position: relative;
-  top: 25px;
-  display: flex;
-  justify-content: space-around;
-  font-size: 16px;
-  font-family: ${theme.FONT.ROBOTO_MEDIUM};
-
-  span {
-    width: 28px;
-    height: 30px;
-  }
-
-  div {
-    ${theme.ALIGN.ROW_CENTER};
-    width: 100px;
-    height: 30px;
-    background-color: white;
-    margin: 0px 15px;
-    border-radius: 24px;
-  }
-
-  img {
-    background-color: white;
-    border-radius: 50%;
-    padding: 8px;
-  }
+  width: 100%;
+  min-height: 800px;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(20deg, #b0cfb2, #f6ae7c);
 `;
 
 const MyResultTitle = styled.div`
-  padding-top: 60px;
+  padding-top: 90px;
   ${theme.ALIGN.COLUMN_CENTER};
   font-family: ${theme.FONT.JIMHURIA_REGULAR};
   font-size: 128px;
@@ -51,34 +23,50 @@ const MyResultTitle = styled.div`
 `;
 
 const BlackLogo = styled.img`
-  position: fixed;
-  bottom: -10px;
-  @media (max-height: 740px) {
-    bottom: -30px;
-    width: 90%;
-  }
+  position: absolute;
+  bottom: 0;
 `;
 
 const PreviousResultWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 100%;
   height: 50%;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    ${theme.ALIGN.COLUMN_CENTER};
+  }
+
+  .swiper-slide {
+    width: 60%;
+  }
+
+  .swiper-slide-next {
+    transform: scale(0.85);
+  }
+
+  .swiper-slide-prev {
+    transform: scale(0.85);
+  }
 `;
 
 const PreviousData = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  margin-top: 20px;
+  width: 95%;
+  height: 330px;
+  margin-top: 10px;
 `;
 
 const MyPageDate = styled.div`
-  padding-top: 10px;
-  width: 100%;
+  width: 95%;
+  margin-top: 10px;
   font-family: ${theme.FONT.ROBOTO_MEDIUM};
   color: #fff;
 `;
 
-export { Container, PreviousData, MyPageWrapper, MyResultTitle, MyPageDate, BlackLogo, PreviousResultWrapper };
+export { Container, PreviousData, MyResultTitle, MyPageDate, BlackLogo, PreviousResultWrapper };

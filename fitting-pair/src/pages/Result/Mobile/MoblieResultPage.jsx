@@ -3,10 +3,15 @@ import { MoblieIcon } from "../../../components";
 import resultImg from "../../../assets/images/result.png";
 import { textResult, SelectedApparel } from "../../../constants/result";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const MoblieResultPage = () => {
   const nav = useNavigate();
   const date = "MAY, 13TH";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <S.Container>

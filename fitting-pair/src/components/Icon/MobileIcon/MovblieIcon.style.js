@@ -3,7 +3,7 @@ import theme from "../../../styles/theme";
 
 const Container = styled.div`
   position: absolute;
-  top: 50px;
+  top: 30px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -29,6 +29,11 @@ const Container = styled.div`
     background-color: white;
     border-radius: 50%;
     padding: 6.5px;
+  }
+
+  span {
+    width: 25px;
+    height: 25px;
   }
 `;
 
