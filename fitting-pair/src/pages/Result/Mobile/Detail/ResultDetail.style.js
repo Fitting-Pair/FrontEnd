@@ -7,7 +7,9 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   width: 100%;
+  min-height: 800px;
   height: 100%;
+  overflow: hidden;
 `;
 
 const ContentWrapper = styled.div`
@@ -44,7 +46,7 @@ const Image = styled.div`
 `;
 
 const Logo = styled.div`
-  position: fixed;
+  position: absolute;
   bottom: -5px;
 `;
 
