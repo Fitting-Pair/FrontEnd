@@ -25,7 +25,7 @@ const SelectedApparel = [
   {
     id: 3,
     url: "https://www.musinsa.com/app/goods/2507613",
-    image: "/public/images/cloth.png",
+    image: "/images/cloth.png",
   },
 ];
 

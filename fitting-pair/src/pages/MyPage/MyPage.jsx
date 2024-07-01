@@ -1,15 +1,11 @@
 import * as S from "./MyPage.style";
-import Logout from "../../assets/images/logout.png";
-import Logo from "../../assets/images/FITTINGPAIR-black.png";
+import Logo from "../../assets/images/Logo-black.png";
+import MoblieIcon from "../../components/Icon/MobileIcon/MoblieIcon";
 
 const MyPage = () => {
   return (
     <S.Container>
-      <S.MyPageWrapper>
-        <span></span>
-        <div>MYPAGE</div>
-        <img src={Logout} />
-      </S.MyPageWrapper>
+      <MoblieIcon text="MYPAGE" noBack={true} />
       <S.MyResultTitle>
         PREVIOUS <br />
         RESULT
