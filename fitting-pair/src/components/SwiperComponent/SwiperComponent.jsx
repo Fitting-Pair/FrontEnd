@@ -1,6 +1,5 @@
 import { Swiper } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
 
 const SwiperComponent = ({ children }) => {
   return (

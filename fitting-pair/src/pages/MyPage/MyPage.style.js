@@ -41,9 +41,6 @@ const PreviousResultWrapper = styled.div`
 
   .swiper-slide {
     ${theme.ALIGN.COLUMN_CENTER};
-  }
-
-  .swiper-slide {
     width: 60%;
   }
 
