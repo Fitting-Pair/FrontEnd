@@ -2,35 +2,45 @@ import { useEffect, useRef, useState } from "react";
 import * as S from "./Webcam.style";
 import { useNavigate } from "react-router-dom";
 import CamImg from "../../assets/images/camera_img.webp";
+import { FaArrowRight } from "react-icons/fa6";
 
 const Webcam = () => {
   const nav = useNavigate();
   const [count, setCount] = useState(5);
-  let timerId;
+  const [image, setImage] = useState(null);
 
+  const timerIdRef = useRef(null);
   const camRef = useRef(null);
   const canvasRef = useRef(null);
 
   const [showCanvas, setShowCanvas] = useState(false);
   const [showCam, setShowCam] = useState(true);
 
-  useEffect(() => {
-    try {
-      const constraints = {
-        video: true,
-        audio: false,
-      };
-      navigator.mediaDevices
-        .getUserMedia(constraints)
-        .then((stream) => {
+  const startCamera = () => {
+    const constraints = {
+      video: true,
+      audio: false,
+    };
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then((stream) => {
+        if (camRef.current) {
           camRef.current.srcObject = stream;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } catch (err) {
-      console.log(err);
-    }
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    startCamera();
+    return () => {
+      const stream = camRef.current?.srcObject;
+      if (stream) {
+        stream.getTracks().forEach((track) => track.stop());
+      }
+    };
   }, []);
 
   const screenShot = () => {
@@ -48,25 +58,29 @@ const Webcam = () => {
     context.drawImage(camRef.current, 0, 0, canvas.width, canvas.height);
 
     // 이미지 저장
-    const image = canvas.toDataURL();
+    const imageData = canvas.toDataURL();
+    setImage(imageData);
     const link = document.createElement("a");
-    link.href = image;
+    link.href = imageData;
     link.download = "test";
     link.click();
 
-    const s = camRef.current.srcObject;
-    if (s) {
-      s.getTracks().forEach((track) => {
-        track.stop();
-      });
+    // 카메라 스트림 멈추기
+    const stream = camRef.current?.srcObject;
+    if (stream) {
+      stream.getTracks().forEach((track) => track.stop());
     }
   };
 
   const startTimer = () => {
-    timerId = setInterval(() => {
+    if (timerIdRef.current) {
+      clearInterval(timerIdRef.current);
+    }
+    setCount(5);
+    timerIdRef.current = setInterval(() => {
       setCount((count) => {
         if (count === 0) {
-          clearInterval(timerId);
+          clearInterval(timerIdRef.current);
           screenShot();
           return 5;
         }
@@ -76,10 +90,14 @@ const Webcam = () => {
   };
 
   const handleClick = () => {
-    if (!timerId) {
-      setCount(5);
-      startTimer();
+    const stream = camRef.current?.srcObject;
+    if (stream) {
+      stream.getTracks().forEach((track) => track.stop());
     }
+    setShowCanvas(false);
+    setShowCam(true);
+    startCamera(); // 카메라 스트림 다시 설정
+    startTimer();
   };
 
   return (
@@ -88,10 +106,11 @@ const Webcam = () => {
         <S.WebCam ref={camRef} $showCam={showCam} autoPlay playsInline muted />
         <S.Canvas ref={canvasRef} $showCanvas={showCanvas} />
       </S.Container>
-      {showCam ? (
-        <S.Button onClick={handleClick}>{count === 5 ? <img src={CamImg} /> : count}</S.Button>
-      ) : (
-        <S.Button onClick={() => nav("/body-check/styling")}>next</S.Button>
+      <S.Button onClick={handleClick}>{count === 5 ? <img src={CamImg} /> : count}</S.Button>
+      {image && (
+        <S.NextButton onClick={() => nav("/body-check/styling")}>
+          <FaArrowRight />
+        </S.NextButton>
       )}
     </div>
   );
