@@ -10,7 +10,7 @@ const Container = styled.div`
   min-height: 800px;
   height: 100%;
   overflow: hidden;
-  background: linear-gradient(20deg, #b0cfb2, #f6ae7c);
+  background: linear-gradient(200deg, #fdb985 11.63%, #fdeaad 55.58%, #a2c9b4 99.53%);
 `;
 
 const MyResultTitle = styled.div`
