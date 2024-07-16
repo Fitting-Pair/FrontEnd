@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import theme from "../../styles/theme";
 
 const Container = styled.div`
+  position: relative;
   width: 350px;
   height: 350px;
   border-radius: 50%;
@@ -64,4 +64,17 @@ const Button = styled.div`
   }
 `;
 
-export { Container, WebCam, Canvas, Button };
+const NextButton = styled.div`
+  position: absolute;
+  top: 55%;
+  right: -150px;
+  svg {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 6px;
+  }
+`;
+
+export { Container, WebCam, Canvas, Button, NextButton };
