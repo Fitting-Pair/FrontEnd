@@ -6,9 +6,10 @@ import mkcert from "vite-plugin-mkcert";
 export default defineConfig({
   plugins: [
     react(),
-    mkcert({
-      keyFile: "/localhost-key.pem",
-      certFile: "/localhost.pem",
-    }),
+    // https 관련
+    // mkcert({
+    //   keyFile: "/localhost-key.pem",
+    //   certFile: "/localhost.pem",
+    // }),
   ],
 });

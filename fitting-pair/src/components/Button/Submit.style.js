@@ -17,6 +17,10 @@ const Container = styled.button`
     width: ${(props) => (props.$login ? "268px" : "240px")};
     height: 40px;
   }
+
+  &:disabled {
+    opacity: 0.7;
+  }
 `;
 
 export { Container };

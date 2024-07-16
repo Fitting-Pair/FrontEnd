@@ -73,4 +73,10 @@ const GoLogin = styled.div`
   }
 `;
 
-export { Container, Logo, Wrapper, ButtonBox, GoLogin };
+const ErrorMeg = styled.p`
+  margin-left: 20px;
+  font-size: 10px;
+  color: #f53151;
+`;
+
+export { Container, Logo, Wrapper, ButtonBox, GoLogin, ErrorMeg };
