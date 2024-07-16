@@ -5,7 +5,7 @@ const signup = async ({ userName, phoneNumber, userHeight, userGender }) => {
     const res = await axiosInstance.post("/auth/signup", { userName, phoneNumber, userHeight, userGender });
     return res;
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
 
@@ -15,7 +15,7 @@ const login = async ({ phoneNumber }) => {
     console.log(res);
     return res.data;
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
 

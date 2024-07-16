@@ -7,6 +7,7 @@ import { useMutation } from "@tanstack/react-query";
 import { login } from "../../api/user";
 import { useNavigate } from "react-router-dom";
 import { validatePhoneNumber, setHeader } from "../../util";
+import { toast } from "sonner";
 
 const LoginPage = () => {
   const nav = useNavigate();
@@ -21,8 +22,21 @@ const LoginPage = () => {
   const { mutate } = useMutation({
     mutationFn: login,
     onSuccess: (data) => {
+      toast.success("로그인 완료 !", {
+        duration: 1200,
+      });
       setHeader("Authorization", data.data.accessToken);
       nav("/body-check");
+    },
+    onError: (error) => {
+      error.response &&
+        toast.error(error.response.data.message, {
+          style: {
+            color: "#fff",
+            background: "#e05151",
+          },
+          duration: 1200,
+        });
     },
   });
 

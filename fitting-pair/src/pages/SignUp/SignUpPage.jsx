@@ -11,6 +11,7 @@ import useForm from "../../hooks/useForm";
 import { useMutation } from "@tanstack/react-query";
 import { signup } from "../../api/user";
 import { validateSignUp } from "../../util";
+import { toast } from "sonner";
 
 const SignUpPage = () => {
   const nav = useNavigate();
@@ -27,7 +28,20 @@ const SignUpPage = () => {
   const { mutate } = useMutation({
     mutationFn: signup,
     onSuccess: () => {
+      toast.success("회원가입이 완료되었습니다 !", {
+        duration: 1200,
+      });
       nav("/login", { replace: true });
+    },
+    onError: (error) => {
+      error.response &&
+        toast.error(error.response.data.message, {
+          style: {
+            color: "#fff",
+            background: "#e05151",
+          },
+          duration: 1200,
+        });
     },
   });
 
