@@ -25,7 +25,7 @@ const LogoWrapper = styled.div`
   }
 `;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.form``;
 
 const InputBox = styled.div`
   ${theme.ALIGN.ROW_SPACE_BETWEEN};
@@ -57,4 +57,10 @@ const InputBox = styled.div`
   }
 `;
 
-export { Container, LogoWrapper, Wrapper, InputBox };
+const ErrorMeg = styled.p`
+  margin-left: 20px;
+  font-size: 10px;
+  color: #f53151;
+`;
+
+export { Container, LogoWrapper, Wrapper, InputBox, ErrorMeg };

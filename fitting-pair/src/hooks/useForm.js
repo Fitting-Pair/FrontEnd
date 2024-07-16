@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function useForm({ initialValue }) {
+function useForm({ initialValue, validate }) {
   const [values, setValues] = useState(initialValue);
+  const [touched, setTouched] = useState({});
+  const [errors, setErrors] = useState({});
 
   const handleChangeText = (name, text) => {
     setValues({ ...values, [name]: text });
@@ -20,6 +22,13 @@ function useForm({ initialValue }) {
     }
   };
 
+  const handleBlur = (name) => {
+    setTouched({
+      ...touched,
+      [name]: true,
+    });
+  };
+
   const handleGenderChange = (gender) => {
     setValues({ ...values, userGender: gender });
   };
@@ -27,22 +36,30 @@ function useForm({ initialValue }) {
   const getGenderButtonProps = (gender) => {
     const onClick = () => handleGenderChange(gender);
     const selected = values.userGender === gender;
-    return { onClick, selected };
+    const onBlur = () => handleBlur(name);
+    return { onClick, selected, onBlur };
   };
 
   const getTextInputProps = (name) => {
     const value = values[name];
     const onChange = (event) => handleChangeText(name, event.target.value);
-    return { value, onChange };
+    const onBlur = () => handleBlur(name);
+    return { value, onChange, onBlur };
   };
 
   const getPhoneNumInputProps = (name) => {
     const value = values[name];
     const onChange = (event) => handlePhoneNum(name, event.target.value);
-    return { value, onChange };
+    const onBlur = () => handleBlur(name);
+    return { value, onChange, onBlur };
   };
 
-  return { getTextInputProps, getPhoneNumInputProps, getGenderButtonProps, values };
+  useEffect(() => {
+    const newErrors = validate(values);
+    setErrors(newErrors);
+  }, [validate, values]);
+
+  return { getTextInputProps, touched, getPhoneNumInputProps, getGenderButtonProps, values, errors };
 }
 
 export default useForm;
