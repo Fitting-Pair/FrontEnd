@@ -26,7 +26,12 @@ const LoginPage = () => {
         duration: 1200,
       });
       setHeader("Authorization", data.data.accessToken);
-      nav("/body-check");
+      if (window.innerWidth <= 600) {
+        // 모바일
+        nav("/my-page");
+      } else {
+        nav("/body-check");
+      }
     },
     onError: (error) => {
       error.response &&

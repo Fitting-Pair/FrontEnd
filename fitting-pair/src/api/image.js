@@ -6,6 +6,7 @@ const postImg = async (imageFile) => {
     console.log(res);
   } catch (error) {
     console.error("Error uploading image:", error.response ? error.response.data : error.message);
+    throw err;
   }
 };
 
