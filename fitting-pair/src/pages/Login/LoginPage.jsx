@@ -6,7 +6,7 @@ import useForm from "../../hooks/useForm";
 import { useMutation } from "@tanstack/react-query";
 import { login } from "../../api/user";
 import { useNavigate } from "react-router-dom";
-import { validatePhoneNumber, setHeader } from "../../util";
+import { validatePhoneNumber, setHeader, setRefresh } from "../../util";
 import { toast } from "sonner";
 
 const LoginPage = () => {
@@ -26,6 +26,7 @@ const LoginPage = () => {
         duration: 1200,
       });
       setHeader("Authorization", data.data.accessToken);
+      setRefresh("Refresh", data.data.refreshToken);
       if (window.innerWidth <= 600) {
         // 모바일
         nav("/my-page");

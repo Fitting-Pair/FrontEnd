@@ -11,11 +11,20 @@ const signup = async ({ userName, phoneNumber, userHeight, userGender }) => {
 
 const login = async ({ phoneNumber }) => {
   try {
-    const res = await axiosInstance.post("/auth/login", { phoneNumber });
-    return res.data;
+    const { data } = await axiosInstance.post("/auth/login", { phoneNumber });
+    return data;
   } catch (err) {
     throw err;
   }
 };
 
-export { signup, login };
+const logout = async () => {
+  try {
+    const { data } = await axiosInstance.post("/auth/logout");
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export { signup, login, logout };
