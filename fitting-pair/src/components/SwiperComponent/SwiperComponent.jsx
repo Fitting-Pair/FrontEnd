@@ -7,6 +7,6 @@ const SwiperComponent = ({ children }) => {
       {children}
     </Swiper>
   );
-};
+}; 
 
 export default SwiperComponent;

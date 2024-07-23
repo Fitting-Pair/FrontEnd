@@ -139,6 +139,7 @@ const ResultExplainWrapper = styled.div`
 
 
 const ContentResultContainer = styled.div`
+  margin-bottom: 20px;
   position: relative;
   display: grid;
   place-items: center;

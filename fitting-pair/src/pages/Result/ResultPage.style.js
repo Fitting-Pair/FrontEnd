@@ -95,57 +95,22 @@ const ClothWrapper = styled.div`
     height: 342px;
     margin: 24px 24px;
     border-radius: 24px;
-
-  section{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-  }
-
-  span {
-    ${theme.ALIGN.COLUMN_CENTER};
-    width: 90px;
-    height: 40px;
-    border-radius: 100px;
-    background-color: white;
-    text-align: center;
-    margin: 0px 10px 15px 15px;
-    border: none;
-    border-radius: 25px;
-    color: white;
-    background-color: #7c9c80;
-    font-weight: bold;
-    font-size: 12px;
-    box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.5);
-  }
-
-  img{
-
-    
-  }
-
-  div {
-    ${theme.ALIGN.COLUMN_CENTER};
-    width: 250px;
-    height: 250px;
-    background-color: white;
-    margin: 0px 15px;
-    border-radius: 24px;
-
-    &:hover {
-      cursor: pointer;
-      box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.5);
-    }
-
-    &:focus {
-      background-color: blue;
-      transition: 0.5s;
-    }
-    
-    
-  }
 `;
+
+const Category = styled.div`
+  ${theme.ALIGN.COLUMN_CENTER};
+  width: 90px;
+  height: 35px;
+  border-radius: 100px;
+  text-align: center;
+  margin: 0px 10px 15px 15px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  background-color: #7c9c80;
+  font-weight: bold;
+  font-size: 12px;
+`
 
 const ResultTitle = styled.div`
   font-family: ${theme.FONT.JIMHURIA_REGULAR};
@@ -166,6 +131,7 @@ const ResultExplainWrapper = styled.div`
 
 
 const ContentResultContainer = styled.div`
+  margin-bottom: 20px;
   position: relative;
   display: grid;
   place-items: center;
@@ -197,4 +163,19 @@ const Button = styled.div`
   }
 `;
 
-export { Button, ClothWrapper, ResultExplainWrapper, ResultImg, ResultTitle, Container, IconWrapper, Icon, IconBlack, ContentWrapper, ContentResultContainer, ResultWrapper};
+const Slider = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+  .swiper-slide-next {
+    transform: scale(0.85);
+  }
+
+  .swiper-slide-prev {
+    transform: scale(0.85);
+  }
+`;
+
+export { Slider, Category, Button, ClothWrapper, ResultExplainWrapper, ResultImg, ResultTitle, Container, IconWrapper, Icon, IconBlack, ContentWrapper, ContentResultContainer, ResultWrapper};

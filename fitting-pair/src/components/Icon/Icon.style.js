@@ -5,7 +5,7 @@ const Container = styled.div`
   display: flex;
   font-size: 13px;
 
-  margin: 20px 5px 95px 5px;
+  margin: 20px 5px 20px 5px;
 `;
 
 const Icon = styled.div`
