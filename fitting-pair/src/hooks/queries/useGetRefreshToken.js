@@ -24,7 +24,6 @@ const useGetRefreshToken = () => {
 
   useEffect(() => {
     if (isError) {
-      console.log("bb");
       removeHeader("Authorization");
       localStorage.clear();
     }
