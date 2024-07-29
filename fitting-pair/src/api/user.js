@@ -35,4 +35,22 @@ const logout = async () => {
   }
 };
 
-export { signup, login, logout };
+const getAccessToken = async () => {
+  const refreshToken = localStorage.getItem("refreshToken");
+
+  try {
+    const { data } = await axiosInstance.get(`${API_PATH.REFRESH}`, {
+      headers: {
+        Refresh: `${refreshToken}`,
+      },
+    });
+    console.log(data);
+
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+export { signup, login, logout, getAccessToken };

@@ -1,0 +1,5 @@
+const NUMBERS = {
+  ACCESS_TOKEN_REFRESH_TIME: 10 * 1000,
+};
+
+export { NUMBERS };
