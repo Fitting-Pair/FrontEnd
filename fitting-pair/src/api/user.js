@@ -1,5 +1,6 @@
 import { axiosInstance } from "./axiosInstance";
 import { API_PATH } from "../constants";
+import { setRefresh } from "../util";
 
 const signup = async ({ userName, phoneNumber, userHeight, userGender }) => {
   try {
@@ -26,6 +27,7 @@ const login = async ({ phoneNumber }) => {
 
 const logout = async () => {
   try {
+    setRefresh("Refresh", localStorage.getItem("refreshToken"));
     const { data } = await axiosInstance.post(`${API_PATH.AUTH}/${API_PATH.LOGOUT}`);
     return data;
   } catch (err) {

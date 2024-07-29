@@ -13,8 +13,12 @@ const useLogin = () => {
       toast.success("로그인 완료 !", {
         duration: 1200,
       });
+      console.log(data.data.accessToken);
+      localStorage.setItem("accessToken", data.data.accessToken);
+      localStorage.setItem("refreshToken", data.data.refreshToken);
       setHeader("Authorization", data.data.accessToken);
-      setRefresh("Refresh", data.data.refreshToken);
+      // setRefresh("Refresh", data.data.refreshToken);
+
       if (window.innerWidth <= 600) {
         // 모바일
         nav(`${PAGE_PATH.MY_PAGE}`);
