@@ -1,22 +1,56 @@
 import { axiosInstance } from "./axiosInstance";
+import { API_PATH } from "../constants";
+import { setRefresh } from "../util";
 
 const signup = async ({ userName, phoneNumber, userHeight, userGender }) => {
   try {
-    const res = await axiosInstance.post("/auth/signup", { userName, phoneNumber, userHeight, userGender });
+    const res = await axiosInstance.post(`${API_PATH.AUTH}/${API_PATH.SIGN_UP}`, {
+      userName,
+      phoneNumber,
+      userHeight,
+      userGender,
+    });
     return res;
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
 
 const login = async ({ phoneNumber }) => {
   try {
-    const res = await axiosInstance.post("/auth/login", { phoneNumber });
-    console.log(res);
-    return res.data;
+    const { data } = await axiosInstance.post(`${API_PATH.AUTH}/${API_PATH.LOGIN}`, { phoneNumber });
+    return data;
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
 
-export { signup, login };
+const logout = async () => {
+  try {
+    setRefresh("Refresh", localStorage.getItem("refreshToken"));
+    const { data } = await axiosInstance.post(`${API_PATH.AUTH}/${API_PATH.LOGOUT}`);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+const getAccessToken = async () => {
+  const refreshToken = localStorage.getItem("refreshToken");
+
+  try {
+    const { data } = await axiosInstance.get(`${API_PATH.REFRESH}`, {
+      headers: {
+        Refresh: `${refreshToken}`,
+      },
+    });
+    console.log(data);
+
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+export { signup, login, logout, getAccessToken };

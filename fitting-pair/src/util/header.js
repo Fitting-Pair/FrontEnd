@@ -12,4 +12,8 @@ function removeHeader(key) {
   delete axiosInstance.defaults.headers.common[key];
 }
 
-export { setHeader, removeHeader };
+function setRefresh(key, value) {
+  axiosInstance.defaults.headers.common[key] = value;
+}
+
+export { setHeader, removeHeader, setRefresh };

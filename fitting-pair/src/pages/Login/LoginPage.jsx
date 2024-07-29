@@ -3,14 +3,12 @@ import LOGO from "../../assets/images/Logo.webp";
 import { Submit } from "../../components";
 import Icon from "../../assets/images/icon.png";
 import useForm from "../../hooks/useForm";
-import { useMutation } from "@tanstack/react-query";
-import { login } from "../../api/user";
-import { useNavigate } from "react-router-dom";
-import { validatePhoneNumber, setHeader } from "../../util";
+import { validatePhoneNumber } from "../../util";
+import { toast } from "sonner";
+import { useLogin } from "../../hooks/queries/useLogin";
+import { useGetRefreshToken } from "../../hooks/queries/useGetRefreshToken";
 
 const LoginPage = () => {
-  const nav = useNavigate();
-
   const loginForm = useForm({
     initialValue: {
       phoneNumber: "",
@@ -18,18 +16,27 @@ const LoginPage = () => {
     validate: validatePhoneNumber,
   });
 
-  const { mutate } = useMutation({
-    mutationFn: login,
-    onSuccess: (data) => {
-      setHeader("Authorization", data.data.accessToken);
-      nav("/body-check");
-    },
-  });
+  const { mutate } = useLogin();
+  useGetRefreshToken();
 
   const handleSubmit = () => {
-    mutate({
-      phoneNumber: loginForm.values.phoneNumber.replace(/-/g, ""),
-    });
+    mutate(
+      {
+        phoneNumber: loginForm.values.phoneNumber.replace(/-/g, ""),
+      },
+      {
+        onError: (error) => {
+          error.response &&
+            toast.error(error.response.data.message, {
+              style: {
+                color: "#fff",
+                background: "#e05151",
+              },
+              duration: 1200,
+            });
+        },
+      },
+    );
   };
 
   return (

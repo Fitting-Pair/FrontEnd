@@ -11,6 +11,8 @@ import useForm from "../../hooks/useForm";
 import { useMutation } from "@tanstack/react-query";
 import { signup } from "../../api/user";
 import { validateSignUp } from "../../util";
+import { toast } from "sonner";
+import { useSignup } from "../../hooks/queries/useSignup";
 
 const SignUpPage = () => {
   const nav = useNavigate();
@@ -24,20 +26,29 @@ const SignUpPage = () => {
     validate: validateSignUp,
   });
 
-  const { mutate } = useMutation({
-    mutationFn: signup,
-    onSuccess: () => {
-      nav("/login", { replace: true });
-    },
-  });
+  const { mutate } = useSignup();
 
   const handleSubmit = () => {
-    mutate({
-      userName: signupForm.values.userName,
-      phoneNumber: signupForm.values.phoneNumber.replace(/-/g, ""),
-      userHeight: parseInt(signupForm.values.userHeight),
-      userGender: signupForm.values.userGender,
-    });
+    mutate(
+      {
+        userName: signupForm.values.userName,
+        phoneNumber: signupForm.values.phoneNumber.replace(/-/g, ""),
+        userHeight: parseInt(signupForm.values.userHeight),
+        userGender: signupForm.values.userGender,
+      },
+      {
+        onError: (error) => {
+          error.response &&
+            toast.error(error.response.data.message, {
+              style: {
+                color: "#fff",
+                background: "#e05151",
+              },
+              duration: 1200,
+            });
+        },
+      },
+    );
   };
 
   const handleDisabled = () => {
