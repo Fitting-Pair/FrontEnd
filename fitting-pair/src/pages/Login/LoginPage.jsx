@@ -3,15 +3,11 @@ import LOGO from "../../assets/images/Logo.webp";
 import { Submit } from "../../components";
 import Icon from "../../assets/images/icon.png";
 import useForm from "../../hooks/useForm";
-import { useMutation } from "@tanstack/react-query";
-import { login } from "../../api/user";
-import { useNavigate } from "react-router-dom";
-import { validatePhoneNumber, setHeader, setRefresh } from "../../util";
+import { validatePhoneNumber } from "../../util";
 import { toast } from "sonner";
+import { useLogin } from "../../hooks/queries/useLogin";
 
 const LoginPage = () => {
-  const nav = useNavigate();
-
   const loginForm = useForm({
     initialValue: {
       phoneNumber: "",
@@ -19,37 +15,26 @@ const LoginPage = () => {
     validate: validatePhoneNumber,
   });
 
-  const { mutate } = useMutation({
-    mutationFn: login,
-    onSuccess: (data) => {
-      toast.success("로그인 완료 !", {
-        duration: 1200,
-      });
-      setHeader("Authorization", data.data.accessToken);
-      setRefresh("Refresh", data.data.refreshToken);
-      if (window.innerWidth <= 600) {
-        // 모바일
-        nav("/my-page");
-      } else {
-        nav("/body-check");
-      }
-    },
-    onError: (error) => {
-      error.response &&
-        toast.error(error.response.data.message, {
-          style: {
-            color: "#fff",
-            background: "#e05151",
-          },
-          duration: 1200,
-        });
-    },
-  });
+  const { mutate } = useLogin();
 
   const handleSubmit = () => {
-    mutate({
-      phoneNumber: loginForm.values.phoneNumber.replace(/-/g, ""),
-    });
+    mutate(
+      {
+        phoneNumber: loginForm.values.phoneNumber.replace(/-/g, ""),
+      },
+      {
+        onError: (error) => {
+          error.response &&
+            toast.error(error.response.data.message, {
+              style: {
+                color: "#fff",
+                background: "#e05151",
+              },
+              duration: 1200,
+            });
+        },
+      },
+    );
   };
 
   return (
