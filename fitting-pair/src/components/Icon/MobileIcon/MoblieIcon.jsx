@@ -16,6 +16,7 @@ const MoblieIcon = ({ text, noBack }) => {
       toast.success("로그아웃 되셨습니다.", {
         duration: 1200,
       });
+      localStorage.clear();
       removeHeader("Authorization");
       removeHeader("Refresh");
 
