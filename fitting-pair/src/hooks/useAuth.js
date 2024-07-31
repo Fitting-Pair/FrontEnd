@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { axiosInstance } from "../api/axiosInstance";
-import { useNavigate } from "react-router-dom";
 
 const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const nav = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("accessToken");
@@ -13,11 +11,10 @@ const useAuth = () => {
       setIsAuthenticated(true);
     } else {
       setIsAuthenticated(false);
-      nav("/");
     }
   }, []);
 
-  return isAuthenticated;
+  return { isAuthenticated };
 };
 
 export default useAuth;
