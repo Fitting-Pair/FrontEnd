@@ -1,38 +1,44 @@
 import styled from "styled-components";
+import theme from "../../styles/theme";
 
 const Container = styled.div`
   position: relative;
-  width: 350px;
+  max-width: 350px;
   height: 350px;
-  border-radius: 50%;
+  border-radius: 10px;
   overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
-    width: 550px;
-    height: 550px;
-  }
-
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-    width: 550px;
-    height: 550px;
+  @media ${theme.WINDOW_SIZE.IPAD_PRO} {
+    max-width: 550px;
+    height: 700px;
   }
 `;
 
 const WebCam = styled.video`
-  width: 550px;
-  height: 550px;
+  object-fit: cover;
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
 
   display: ${(props) => (props.$showCam ? "" : "none")};
+
+  @media ${theme.WINDOW_SIZE.IPAD_PRO} {
+    width: 550px;
+    height: 700px;
+  }
 `;
 
 const Canvas = styled.canvas`
   display: ${(props) => (props.$showCanvas ? "" : "none")};
+  object-fit: cover;
+
+  @media ${theme.WINDOW_SIZE.IPAD_PRO} {
+    width: 550px;
+    height: 700px;
+  }
 `;
 
 const Button = styled.div`
