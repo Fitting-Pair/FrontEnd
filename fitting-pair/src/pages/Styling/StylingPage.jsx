@@ -67,7 +67,9 @@ const StylingPage = () => {
           </S.ClothWrapper>
 
           {/* <S.Button onClick={openModal}>Store</S.Button> */}
-          <QRCodeGenerator />
+          <S.QRImg>
+            <QRCodeGenerator />
+          </S.QRImg>
           <Modal isVisible={isModalVisible} onClose={closeModal} />
         </S.ResultWrapper>
       </S.ContentResultContainer>

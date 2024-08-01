@@ -6,6 +6,10 @@ const Container = styled.div`
   font-size: 13px;
 
   margin: 20px 5px 20px 5px;
+
+  @media ${theme.WINDOW_SIZE.MOBILE} {
+    display: none;
+  }
 `;
 
 const Icon = styled.div`
@@ -50,5 +54,6 @@ const Img = styled.img`
   margin-right: 10px;
   width: 13%;
 `;
+
 
 export { Container, Icon, Img };

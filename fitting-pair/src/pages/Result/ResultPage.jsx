@@ -51,6 +51,7 @@ const ResultPage = () => {
         </S.ResultWrapper>
 
         <S.ClothWrapper>
+          
 
           <S.Category>OUTER</S.Category>
 
