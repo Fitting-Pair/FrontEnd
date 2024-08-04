@@ -1,17 +1,19 @@
 import { axiosInstance } from "./axiosInstance";
 import { API_PATH } from "../constants";
 import { setRefresh } from "../util";
+import axios from "axios";
 
 const signup = async ({ userName, phoneNumber, userHeight, userGender }) => {
   try {
-    const res = await axiosInstance.post(`${API_PATH.AUTH}/${API_PATH.SIGN_UP}`, {
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}${API_PATH.AUTH}/${API_PATH.SIGN_UP}`, {
       userName,
       phoneNumber,
-      userHeight,
-      userGender,
+      height: userHeight,
+      gender: userGender,
     });
     return res;
   } catch (err) {
+    console.log(err);
     throw err;
   }
 };
