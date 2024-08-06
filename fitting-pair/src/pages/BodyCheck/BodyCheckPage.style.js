@@ -147,6 +147,7 @@ const ContentWrapper = styled.div`
 `;
 
 const ContentContainer = styled.div`
+  margin-top: 95px;
   position: relative;
   display: grid;
   place-items: center;
