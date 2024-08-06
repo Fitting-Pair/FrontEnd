@@ -9,9 +9,10 @@ const PersonalCloth = ({ apparel }) => {
   return (
         <S.ImageBox>
             {cloth.map((e) => (
-              <div key={e.id}>
-                <img src={e.image} />
-              </div>
+              <S.Wrap key={e.id}>
+                <img 
+                src={e.image} />
+              </S.Wrap>
             ))}
         </S.ImageBox>
   );

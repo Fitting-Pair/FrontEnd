@@ -4,10 +4,15 @@ import resultImg from "../../assets/images/result.png";
 import { Icon } from "../../components";
 import { apparel } from "../../constants/apparel";
 import PersonalCloth from "../../components/PersonalCloth/PersonalCloth";
-import SwiperComponent from "../../components/SwiperComponent/SwiperComponent";
+import ApparelComponent from "../../components/ApparelComponent/ApparelComponent";
 import { SwiperSlide } from "swiper/react";
 import { useNavigate } from "react-router-dom";
-// import "./ResultPage.css";
+
+// import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+// import "swiper/css/scrollbars";
 
 
 // styling 페이지
@@ -50,22 +55,32 @@ const ResultPage = () => {
           </S.ResultExplainWrapper>
         </S.ResultWrapper>
 
-        <S.ClothWrapper>
-          
-
-          <S.Category>OUTER</S.Category>
-
+        <S.ClothWrapper>          
+          <S.Category>TOP</S.Category>
           <S.Slider>
-            <SwiperComponent>
+            <ApparelComponent>
               {apparel.map((e) => (
-                <SwiperSlide key={e.id}>
+                <SwiperSlide>
                     <PersonalCloth apparel={e} />
                 </SwiperSlide>
               ))}
-            </SwiperComponent>
+            </ApparelComponent>
           </S.Slider>
-
         </S.ClothWrapper>
+
+        <S.ClothWrapper>          
+          <S.Category>BOTTOM</S.Category>
+          <S.Slider>
+            <ApparelComponent>
+              {apparel.map((e) => (
+                <SwiperSlide>
+                    <PersonalCloth apparel={e} />
+                </SwiperSlide>
+              ))}
+            </ApparelComponent>
+          </S.Slider>
+        </S.ClothWrapper>
+
         <S.Button onClick={() => nav("/body-check/styling/result")}>Generate</S.Button>
       </S.ContentResultContainer>
     </S.Container>

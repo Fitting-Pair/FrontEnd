@@ -170,11 +170,9 @@ const Slider = styled.div`
     align-items: center;
 
   .swiper-slide-next {
-    transform: scale(0.85);
   }
 
   .swiper-slide-prev {
-    transform: scale(0.85);
   }
 `;
 

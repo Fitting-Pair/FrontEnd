@@ -4,11 +4,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
-const SwiperComponent = ({ children }) => {
+const ApparelComponent = ({ children }) => {
   return (
     <Swiper 
     slidesPerView={"auto"} 
-    centeredSlides={true} 
     spaceBetween={10} 
     initialSlide={1} 
     loop={true}>
@@ -17,4 +16,4 @@ const SwiperComponent = ({ children }) => {
   );
 }; 
 
-export default SwiperComponent;
+export default ApparelComponent;
