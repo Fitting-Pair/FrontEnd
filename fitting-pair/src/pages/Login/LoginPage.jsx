@@ -4,7 +4,6 @@ import { Submit } from '../../components';
 import Icon from '../../assets/images/icon.png';
 import useForm from '../../hooks/useForm';
 import { validatePhoneNumber } from '../../util';
-import { toast } from 'sonner';
 import { useLogin } from '../../hooks/queries/useLogin';
 
 const LoginPage = () => {
@@ -18,23 +17,9 @@ const LoginPage = () => {
 	const { mutate } = useLogin();
 
 	const handleSubmit = () => {
-		mutate(
-			{
-				phoneNumber: loginForm.values.phoneNumber.replace(/-/g, ''),
-			},
-			{
-				onError: error => {
-					error.response &&
-						toast.error(error.response.data.message, {
-							style: {
-								color: '#fff',
-								background: '#e05151',
-							},
-							duration: 1200,
-						});
-				},
-			},
-		);
+		mutate({
+			phoneNumber: loginForm.values.phoneNumber.replace(/-/g, ''),
+		});
 	};
 
 	return (

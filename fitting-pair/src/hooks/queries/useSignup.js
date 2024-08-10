@@ -15,7 +15,6 @@ const useSignup = () => {
 			});
 			nav(`${PAGE_PATH.BASE}${PAGE_PATH.LOGIN}`, { replace: true });
 		},
-
 		onError: error => {
 			console.log(error.response.data.message);
 			error.response &&

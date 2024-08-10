@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { login } from '../../api/user';
 import { toast } from 'sonner';
 import { PAGE_PATH } from '../../constants';
+import theme from '../../styles/theme';
 
 const useLogin = () => {
 	const nav = useNavigate();
@@ -25,7 +26,15 @@ const useLogin = () => {
 			}
 		},
 		onError: error => {
-			console.log(error);
+			console.log(error.response.data.message);
+			error.response &&
+				toast.error(error.response.data.message, {
+					duration: 1200,
+					style: {
+						color: theme.COLOR.WHITE,
+						backgroundColor: theme.COLOR.RED,
+					},
+				});
 		},
 	});
 };
