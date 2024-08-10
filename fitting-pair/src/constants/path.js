@@ -17,7 +17,7 @@ const API_PATH = {
 	LOGIN: 'login',
 	SIGN_UP: 'signup',
 	LOGOUT: 'logout',
-	REFRESH: '/auth/reissue-token',
+	REFRESH: 'auth/reissue-token',
 
 	// image
 	UPLOAD_USER_IMAGE: '/usersimg/upload',
