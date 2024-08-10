@@ -7,9 +7,9 @@ export default defineConfig({
   plugins: [
     react(),
     // https 관련
-    // mkcert({
-    //   keyFile: "/localhost-key.pem",
-    //   certFile: "/localhost.pem",
-    // }),
+    mkcert({
+      keyFile: "/localhost-key.pem",
+      certFile: "/localhost.pem",
+    }),
   ],
 });

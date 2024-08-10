@@ -1,72 +1,72 @@
-import styled from "styled-components";
-import theme from "../../styles/theme";
+import styled from 'styled-components';
+import theme from '../../styles/theme';
 
 const Container = styled.div`
-  ${theme.ALIGN.COLUMN_CENTER};
-  height: 100vh;
+	${theme.ALIGN.COLUMN_CENTER};
+	height: 100vh;
 
-  button {
-    ${theme.ALIGN.ROW_CENTER};
-    padding: 8px 20px;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 2px 6px 10px -7px rgba(0, 0, 0, 0.5);
-    color: ${theme.COLOR.GREEN};
-    font-family: ${theme.FONT.ROBOTO_MEDIUM};
+	button {
+		${theme.ALIGN.ROW_CENTER};
+		padding: 8px 20px;
+		border: none;
+		border-radius: 50px;
+		box-shadow: 2px 6px 10px -7px rgba(0, 0, 0, 0.5);
+		color: ${theme.COLOR.GREEN};
+		font-family: ${theme.FONT.ROBOTO_MEDIUM};
 
-    img {
-      margin-left: 5px;
-    }
+		img {
+			margin-left: 5px;
+		}
 
-    @media ${theme.WINDOW_SIZE.IPAD_PRO} {
-      font-size: 14px;
-      padding: 10px 23px;
-    }
+		@media ${theme.WINDOW_SIZE.IPAD_PRO} {
+			font-size: 14px;
+			padding: 10px 23px;
+		}
 
-    @media ${theme.WINDOW_SIZE.MOBILE} {
-      font-size: 11px;
-      padding: 8px 19px;
-    }
-  }
+		@media ${theme.WINDOW_SIZE.MOBILE} {
+			font-size: 11px;
+			padding: 8px 19px;
+		}
+	}
 `;
 
 const LogoWrapper = styled.div`
-  ${theme.ALIGN.COLUMN_CENTER};
+	${theme.ALIGN.COLUMN_CENTER};
 
-  img {
-    width: 80%;
-    margin-bottom: 40px;
+	img {
+		width: 80%;
+		margin-bottom: 40px;
 
-    @media ${theme.WINDOW_SIZE.IPAD_PRO} {
-      width: 100%;
-    }
+		@media ${theme.WINDOW_SIZE.IPAD_PRO} {
+			width: 100%;
+		}
 
-    @media ${theme.WINDOW_SIZE.MOBILE} {
-      width: 75%;
-      margin-bottom: 30px;
-    }
-  }
+		@media ${theme.WINDOW_SIZE.MOBILE} {
+			width: 75%;
+			margin-bottom: 30px;
+		}
+	}
 `;
 
 const Text = styled.div`
-  p {
-    color: #fff;
-    text-shadow: 1px 2px 2px rgba(136, 136, 136, 0.6);
-    font-size: 15px;
-    font-family: ${theme.FONT.INTER_MEDIUM};
-    text-align: center;
-    margin-bottom: 20px;
+	p {
+		color: #fff;
+		text-shadow: 1px 2px 2px rgba(136, 136, 136, 0.6);
+		font-size: 15px;
+		font-family: ${theme.FONT.INTER_MEDIUM};
+		text-align: center;
+		margin-bottom: 20px;
 
-    @media ${theme.WINDOW_SIZE.IPAD_PRO} {
-      font-size: 20px;
-      margin-bottom: 23px;
-    }
+		@media ${theme.WINDOW_SIZE.IPAD_PRO} {
+			font-size: 20px;
+			margin-bottom: 23px;
+		}
 
-    @media ${theme.WINDOW_SIZE.MOBILE} {
-      font-size: 12px;
-      margin-bottom: 20px;
-    }
-  }
+		@media ${theme.WINDOW_SIZE.MOBILE} {
+			font-size: 12px;
+			margin-bottom: 20px;
+		}
+	}
 `;
 
 export { Container, LogoWrapper, Text };
