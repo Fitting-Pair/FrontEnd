@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 .env
-yarn.lock
+
 
 # https 
 localhost-key.pem
