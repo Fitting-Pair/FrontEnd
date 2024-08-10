@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 import MFButton from '../../components/Button/MFButton/MFButton';
 import useForm from '../../hooks/useForm';
 import { validateSignUp } from '../../util';
-import { toast } from 'sonner';
 import { useSignup } from '../../hooks/queries/useSignup';
 
 const SignUpPage = () => {
@@ -26,26 +25,12 @@ const SignUpPage = () => {
 	const { mutate } = useSignup();
 
 	const handleSubmit = () => {
-		mutate(
-			{
-				userName: signupForm.values.userName,
-				phoneNumber: signupForm.values.phoneNumber.replace(/-/g, ''),
-				userHeight: parseInt(signupForm.values.userHeight),
-				userGender: signupForm.values.userGender,
-			},
-			{
-				onError: error => {
-					error.response &&
-						toast.error(error.response.data.message, {
-							style: {
-								color: '#fff',
-								background: '#e05151',
-							},
-							duration: 1200,
-						});
-				},
-			},
-		);
+		mutate({
+			userName: signupForm.values.userName,
+			phoneNumber: signupForm.values.phoneNumber.replace(/-/g, ''),
+			height: parseInt(signupForm.values.userHeight),
+			gender: signupForm.values.userGender,
+		});
 	};
 
 	const handleDisabled = () => {

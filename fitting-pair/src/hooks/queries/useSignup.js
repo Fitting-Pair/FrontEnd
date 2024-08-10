@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { signup } from '../../api/user';
 import { toast } from 'sonner';
 import { PAGE_PATH } from '../../constants';
+import theme from '../../styles/theme';
 
 const useSignup = () => {
 	const nav = useNavigate();
@@ -14,7 +15,18 @@ const useSignup = () => {
 			});
 			nav(`${PAGE_PATH.BASE}${PAGE_PATH.LOGIN}`, { replace: true });
 		},
-		throwOnError: error => Number(error.response?.status) >= 500,
+
+		onError: error => {
+			console.log(error.response.data.message);
+			error.response &&
+				toast.error(error.response.data.message, {
+					duration: 1200,
+					style: {
+						color: theme.COLOR.WHITE,
+						backgroundColor: theme.COLOR.RED,
+					},
+				});
+		},
 	});
 };
 

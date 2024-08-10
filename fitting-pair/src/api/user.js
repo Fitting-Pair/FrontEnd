@@ -3,14 +3,14 @@ import { API_PATH } from '../constants';
 import { setRefresh } from '../util';
 import axios from 'axios';
 
-const signup = async ({ userName, phoneNumber, userHeight, userGender }) => {
+const signup = async ({ userName, phoneNumber, height, gender }) => {
 	const { data } = await axios.post(
 		`${import.meta.env.VITE_API_URL}${API_PATH.AUTH}/${API_PATH.SIGN_UP}`,
 		{
 			userName,
 			phoneNumber,
-			height: userHeight,
-			gender: userGender,
+			height,
+			gender,
 		},
 	);
 	return data;

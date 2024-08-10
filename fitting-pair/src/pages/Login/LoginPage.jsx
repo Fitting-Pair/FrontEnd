@@ -6,7 +6,6 @@ import useForm from '../../hooks/useForm';
 import { validatePhoneNumber } from '../../util';
 import { toast } from 'sonner';
 import { useLogin } from '../../hooks/queries/useLogin';
-import { useGetRefreshToken } from '../../hooks/queries/useGetRefreshToken';
 
 const LoginPage = () => {
 	const loginForm = useForm({
@@ -17,7 +16,6 @@ const LoginPage = () => {
 	});
 
 	const { mutate } = useLogin();
-	useGetRefreshToken();
 
 	const handleSubmit = () => {
 		mutate(

@@ -2,9 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../api/user';
 import { toast } from 'sonner';
-import { setHeader } from '../../util';
-import { PAGE_PATH, QUERY_KEYS } from '../../constants';
-import queryClient from '../../api/queryClient';
+import { PAGE_PATH } from '../../constants';
 
 const useLogin = () => {
 	const nav = useNavigate();
@@ -18,7 +16,6 @@ const useLogin = () => {
 
 			localStorage.setItem('accessToken', data.data.accessToken);
 			localStorage.setItem('refreshToken', data.data.refreshToken);
-			setHeader('Authorization', data.data.accessToken);
 
 			if (window.innerWidth <= 600) {
 				// 모바일
@@ -27,13 +24,9 @@ const useLogin = () => {
 				nav(`${PAGE_PATH.BODY_CHECK}`);
 			}
 		},
-
-		onSettled: () => {
-			queryClient.refetchQueries({
-				queryKey: [QUERY_KEYS.AUTH, QUERY_KEYS.GET_ACCESS_TOKEN],
-			});
+		onError: error => {
+			console.log(error);
 		},
-		throwOnError: error => Number(error.response?.status) >= 500,
 	});
 };
 
