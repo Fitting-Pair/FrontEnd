@@ -15,14 +15,14 @@ const MoblieIcon = ({ text, noBack }) => {
 		mutate();
 	};
 
-	const handleModifiy = () => {
+	const handleModify = () => {
 		nav(`${PAGE_PATH.MY_PAGE}/${PAGE_PATH.MODIFY}/${id}`);
 	};
 
 	return (
 		<S.Container>
 			{noBack ? (
-				<FaPen onClick={handleModifiy} />
+				<FaPen onClick={handleModify} />
 			) : (
 				<FaArrowLeft onClick={() => nav(-1)} />
 			)}
