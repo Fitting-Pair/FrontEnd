@@ -4,6 +4,7 @@ import theme from '../../styles/theme';
 const Container = styled.div`
 	width: 100%;
 	height: 100%;
+	height: 100dvh;
 	${theme.ALIGN.COLUMN_CENTER};
 `;
 

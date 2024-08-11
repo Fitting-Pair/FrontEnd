@@ -5,10 +5,14 @@ const PAGE_PATH = {
 	SIGN_UP: 'sign-up',
 
 	// body-check
-	BODY_CHECK: '/body-check',
+	BODY_CHECK: 'body-check',
+	STYLEING: 'styling',
 
 	//my-page
 	MY_PAGE: '/my-page',
+	MODIFY: 'modify',
+	RESULT: 'result',
+	DETAIL: 'detail',
 };
 
 const API_PATH = {

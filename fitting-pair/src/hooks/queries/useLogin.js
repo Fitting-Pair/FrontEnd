@@ -20,13 +20,12 @@ const useLogin = () => {
 
 			if (window.innerWidth <= 600) {
 				// 모바일
-				nav(`${PAGE_PATH.MY_PAGE}`);
+				nav(`${PAGE_PATH.MY_PAGE}/${data.data.id}`);
 			} else {
-				nav(`${PAGE_PATH.BODY_CHECK}`);
+				nav(`/${PAGE_PATH.BODY_CHECK}`);
 			}
 		},
 		onError: error => {
-			console.log(error.response.data.message);
 			error.response &&
 				toast.error(error.response.data.message, {
 					duration: 1200,
