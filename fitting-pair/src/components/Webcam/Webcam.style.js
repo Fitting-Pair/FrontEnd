@@ -14,8 +14,9 @@ const Container = styled.div`
 
 	@media ${theme.WINDOW_SIZE.IPAD_PRO} {
 		max-width: 550px;
-		height: 700px;
+		height: 680px;
 	}
+	background-color: gray;
 `;
 
 const WebCam = styled.video`
@@ -27,7 +28,7 @@ const WebCam = styled.video`
 
 	@media ${theme.WINDOW_SIZE.IPAD_PRO} {
 		width: 550px;
-		height: 700px;
+		height: 680px;
 	}
 `;
 

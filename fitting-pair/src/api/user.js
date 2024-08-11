@@ -17,9 +17,11 @@ const signup = async ({ userName, phoneNumber, height, gender }) => {
 };
 
 const login = async ({ phoneNumber }) => {
-	const { data } = await axiosInstance.post(
-		`${API_PATH.AUTH}/${API_PATH.LOGIN}`,
-		{ phoneNumber },
+	const { data } = await axios.post(
+		`${import.meta.env.VITE_API_URL}${API_PATH.AUTH}/${API_PATH.LOGIN}`,
+		{
+			phoneNumber,
+		},
 	);
 	return data;
 };

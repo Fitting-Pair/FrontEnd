@@ -1,6 +1,8 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import FittingLayout from './layout/FittingLayout/FittingLayout';
-import StylingLayout from './layout/StylingLayout/StylingLayout';
+import { ThemeProvider } from 'styled-components';
+import theme from './styles/theme';
+import { PAGE_PATH } from './constants';
+import { FittingLayout, StylingLayout, MyPageLayout } from './layout';
 import {
 	BodyCheckPage,
 	Homepage,
@@ -10,15 +12,13 @@ import {
 	SignUpPage,
 	StylingPage,
 	MoblieResultPage,
+	ModifyPage,
+	ResultDetail,
 } from './pages';
-import { ThemeProvider } from 'styled-components';
-import theme from './styles/theme';
-import MyPageLayout from './layout/MyPageLayout/MyPageLayout';
-import ResultDetail from './pages/Result/Mobile/Detail/ResultDetail';
 
 const router = createBrowserRouter([
 	{
-		path: '/',
+		path: `${PAGE_PATH.BASE}`,
 		element: <FittingLayout />,
 		children: [
 			{
@@ -26,59 +26,56 @@ const router = createBrowserRouter([
 				element: <Homepage />,
 			},
 			{
-				path: 'sign-up',
+				path: `${PAGE_PATH.SIGN_UP}`,
 				element: <SignUpPage />,
 			},
-			{ path: 'login', element: <LoginPage /> },
+			{ path: `${PAGE_PATH.LOGIN}`, element: <LoginPage /> },
 
 			{
-				path: 'body-check',
+				path: `${PAGE_PATH.BODY_CHECK}`,
 				element: <BodyCheckPage />,
 			},
 		],
 	},
 	{
-		path: '/body-check',
+		path: `/${PAGE_PATH.BODY_CHECK}`,
 		element: <StylingLayout />,
 		children: [
 			{
-				path: 'styling', // user id 넣어서 수정해야함
+				path: `${PAGE_PATH.STYLEING}`, // user id 넣어서 수정해야함
 				element: <ResultPage />,
 			},
 			{
-				path: 'styling/result',
+				path: `${PAGE_PATH.STYLEING}/${PAGE_PATH.RESULT}`,
 				element: <StylingPage />,
 			},
 		],
 	},
 	{
-		path: '/my-page',
+		path: `${PAGE_PATH.MY_PAGE}`,
 		element: <MyPageLayout />,
 		children: [
 			{
-				index: true,
+				path: ':id',
 				element: <MyPage />,
 			},
 			{
-				path: 'result/:id', // id 임의 지정 이후 수정
+				path: `${PAGE_PATH.RESULT}/:id`, // TODO:id 임의 지정 이후 수정
 				element: <MoblieResultPage />,
 			},
 			{
-				path: 'result/detail/:id',
+				path: `${PAGE_PATH.RESULT}/${PAGE_PATH.DETAIL}/:id`,
 				element: <ResultDetail />,
+			},
+			{
+				path: `${PAGE_PATH.MODIFY}/:id`,
+				element: <ModifyPage />,
 			},
 		],
 	},
 ]);
 
 function App() {
-	function setScreenSize() {
-		let vh = window.innerHeight * 0.01;
-		document.documentElement.style.setProperty('--vh', `${vh}px`);
-	}
-
-	window.addEventListener('resize', () => setScreenSize());
-
 	return (
 		<ThemeProvider theme={theme}>
 			<RouterProvider router={router} />

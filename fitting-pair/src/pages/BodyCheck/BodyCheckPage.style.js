@@ -2,14 +2,10 @@ import styled from 'styled-components';
 import theme from '../../styles/theme';
 
 const Container = styled.div`
-	${theme.ALIGN.COLUMN_CENTER};
-`;
-
-const IconWrapper = styled.div`
 	display: flex;
-	font-size: 13px;
-
-	margin: 20px 5px 95px 5px;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
 `;
 
 const Icon = styled.div`
@@ -29,33 +25,11 @@ const Icon = styled.div`
 		width: 13%;
 	}
 
-	@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+	@media ${theme.WINDOW_SIZE.IPAD_PRO} {
 		font-size: 17px;
 		width: 135px;
 		height: 43px;
 		border-radius: 50px;
-	}
-
-	@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-		font-size: 15px;
-		width: 110px;
-		height: 37px;
-		border-radius: 50px;
-	}
-`;
-
-const IconBlack = styled(Icon)`
-	width: 130px;
-
-	color: white;
-	background-color: black;
-
-	@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
-		width: 165px;
-	}
-
-	@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-		width: 145px;
 	}
 `;
 
@@ -68,25 +42,15 @@ const TipIcon = styled(Icon)`
 		width: 22%;
 	}
 
-	@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
-		font-size: 20px;
-		width: 130px;
-		height: 53px;
+	@media ${theme.WINDOW_SIZE.IPAD_PRO} {
+		font-size: 18px;
+		width: 120px;
+		height: 50px;
 		margin-bottom: 30px;
+		margin-top: 0;
 
 		img {
 			width: 23px;
-		}
-	}
-
-	@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-		font-size: 15px;
-		width: 95px;
-		height: 40px;
-		margin-bottom: 30px;
-
-		img {
-			width: 16px;
 		}
 	}
 `;
@@ -97,37 +61,23 @@ const Cam = styled.div`
 	background-color: #b5b5b5;
 	border-radius: 50%;
 
-	@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+	@media ${theme.WINDOW_SIZE.IPAD_PRO} {
 		width: 600px;
 		height: 600px;
-	}
-
-	@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-		width: 500px;
-		height: 500px;
 	}
 `;
 
 const TipWrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
+	${theme.ALIGN.COLUMN_CENTER};
 	margin-top: 40px;
 	margin-bottom: 100px;
 
 	font-size: 12px;
 	font-weight: 500;
 
-	@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
-		margin-top: 70px;
+	@media ${theme.WINDOW_SIZE.IPAD_PRO} {
+		margin-top: 50px;
 		font-size: 23px;
-	}
-
-	@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-		margin-top: 55px;
-		font-size: 15px;
 	}
 `;
 
@@ -144,6 +94,10 @@ const ContentWrapper = styled.div`
 		text-align: center;
 		margin-bottom: 10px;
 	}
+
+	@media ${theme.WINDOW_SIZE.IPAD_PRO} {
+		font-size: 20px;
+	}
 `;
 
 const ContentContainer = styled.div`
@@ -154,9 +108,7 @@ const ContentContainer = styled.div`
 
 export {
 	Container,
-	IconWrapper,
 	Icon,
-	IconBlack,
 	TipIcon,
 	Cam,
 	ContentWrapper,

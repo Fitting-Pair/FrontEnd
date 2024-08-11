@@ -7,6 +7,7 @@ import BodyCheckPage from './BodyCheck/BodyCheckPage';
 import MyPage from './MyPage/MyPage';
 import MoblieResultPage from './Result/Mobile/MoblieResultPage';
 import ResultDetail from './Result/Mobile/Detail/ResultDetail';
+import ModifyPage from './Modify/ModifyPage';
 
 export {
 	Homepage,
@@ -18,4 +19,5 @@ export {
 	MyPage,
 	MoblieResultPage,
 	ResultDetail,
+	ModifyPage,
 };
