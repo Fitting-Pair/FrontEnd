@@ -4,8 +4,10 @@ import LogOut from '../../../assets/images/door.png';
 import useLogout from '../../../hooks/queries/useLogout';
 import { useNavigate } from 'react-router-dom';
 import { FaPen } from 'react-icons/fa6';
+import { PAGE_PATH } from '../../../constants';
 
 const MoblieIcon = ({ text, noBack }) => {
+	const id = 1; // TODO: 유저 아이디로 수정
 	const nav = useNavigate();
 	const { mutate } = useLogout();
 
@@ -13,7 +15,9 @@ const MoblieIcon = ({ text, noBack }) => {
 		mutate();
 	};
 
-	const handleModifiy = () => {};
+	const handleModifiy = () => {
+		nav(`${PAGE_PATH.MY_PAGE}/${PAGE_PATH.MODIFY}/${id}`);
+	};
 
 	return (
 		<S.Container>

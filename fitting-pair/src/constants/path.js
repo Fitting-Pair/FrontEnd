@@ -10,6 +10,7 @@ const PAGE_PATH = {
 
 	//my-page
 	MY_PAGE: '/my-page',
+	MODIFY: 'modify',
 };
 
 const API_PATH = {
