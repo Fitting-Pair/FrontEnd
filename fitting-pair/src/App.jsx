@@ -1,6 +1,8 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import FittingLayout from './layout/FittingLayout/FittingLayout';
-import StylingLayout from './layout/StylingLayout/StylingLayout';
+import { ThemeProvider } from 'styled-components';
+import theme from './styles/theme';
+import { PAGE_PATH } from './constants';
+import { FittingLayout, StylingLayout, MyPageLayout } from './layout';
 import {
 	BodyCheckPage,
 	Homepage,
@@ -10,11 +12,9 @@ import {
 	SignUpPage,
 	StylingPage,
 	MoblieResultPage,
+	ModifyPage,
+	ResultDetail,
 } from './pages';
-import { ThemeProvider } from 'styled-components';
-import theme from './styles/theme';
-import MyPageLayout from './layout/MyPageLayout/MyPageLayout';
-import ResultDetail from './pages/Result/Mobile/Detail/ResultDetail';
 
 const router = createBrowserRouter([
 	{
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
 		],
 	},
 	{
-		path: '/my-page',
+		path: `${PAGE_PATH.MY_PAGE}`,
 		element: <MyPageLayout />,
 		children: [
 			{
@@ -60,25 +60,22 @@ const router = createBrowserRouter([
 				element: <MyPage />,
 			},
 			{
-				path: 'result/:id', // id 임의 지정 이후 수정
+				path: 'result/:id', // TODO:id 임의 지정 이후 수정
 				element: <MoblieResultPage />,
 			},
 			{
 				path: 'result/detail/:id',
 				element: <ResultDetail />,
 			},
+			{
+				path: `${PAGE_PATH.MODIFY}/:id`,
+				element: <ModifyPage />,
+			},
 		],
 	},
 ]);
 
 function App() {
-	function setScreenSize() {
-		let vh = window.innerHeight * 0.01;
-		document.documentElement.style.setProperty('--vh', `${vh}px`);
-	}
-
-	window.addEventListener('resize', () => setScreenSize());
-
 	return (
 		<ThemeProvider theme={theme}>
 			<RouterProvider router={router} />
