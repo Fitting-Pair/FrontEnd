@@ -2,12 +2,12 @@ import * as S from './MovblieIcon.style';
 import { FaArrowLeft } from 'react-icons/fa6';
 import LogOut from '../../../assets/images/door.png';
 import useLogout from '../../../hooks/queries/useLogout';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FaPen } from 'react-icons/fa6';
 import { PAGE_PATH } from '../../../constants';
 
 const MoblieIcon = ({ text, noBack }) => {
-	const id = 1; // TODO: 유저 아이디로 수정
+	const { id } = useParams();
 	const nav = useNavigate();
 	const { mutate } = useLogout();
 

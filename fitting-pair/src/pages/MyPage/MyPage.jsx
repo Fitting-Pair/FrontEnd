@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
 	const nav = useNavigate();
+
 	return (
 		<S.Container>
 			<MoblieIcon text="MYPAGE" noBack={true} />

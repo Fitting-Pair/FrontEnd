@@ -56,7 +56,7 @@ const router = createBrowserRouter([
 		element: <MyPageLayout />,
 		children: [
 			{
-				index: true,
+				path: ':id',
 				element: <MyPage />,
 			},
 			{

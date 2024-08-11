@@ -20,7 +20,7 @@ const useLogin = () => {
 
 			if (window.innerWidth <= 600) {
 				// 모바일
-				nav(`${PAGE_PATH.MY_PAGE}`);
+				nav(`${PAGE_PATH.MY_PAGE}/${data.data.id}`);
 			} else {
 				nav(`/${PAGE_PATH.BODY_CHECK}`);
 			}
