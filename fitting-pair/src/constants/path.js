@@ -6,6 +6,7 @@ const PAGE_PATH = {
 
 	// body-check
 	BODY_CHECK: '/body-check',
+	STYLEING: 'styling',
 
 	//my-page
 	MY_PAGE: '/my-page',

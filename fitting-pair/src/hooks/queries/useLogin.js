@@ -26,7 +26,6 @@ const useLogin = () => {
 			}
 		},
 		onError: error => {
-			console.log(error.response.data.message);
 			error.response &&
 				toast.error(error.response.data.message, {
 					duration: 1200,
