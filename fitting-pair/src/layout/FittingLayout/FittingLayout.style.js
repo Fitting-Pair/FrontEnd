@@ -8,7 +8,7 @@ const Container = styled.div`
 		#a2c9b4 99.53%
 	);
 	width: 100vw;
-	height: calc(var(--vh, 1vh) * 100);
+	min-height: 100dvh;
 `;
 
 export { Container };
