@@ -18,7 +18,7 @@ import {
 
 const router = createBrowserRouter([
 	{
-		path: '/',
+		path: `${PAGE_PATH.BASE}`,
 		element: <FittingLayout />,
 		children: [
 			{
@@ -26,27 +26,27 @@ const router = createBrowserRouter([
 				element: <Homepage />,
 			},
 			{
-				path: 'sign-up',
+				path: `${PAGE_PATH.SIGN_UP}`,
 				element: <SignUpPage />,
 			},
-			{ path: 'login', element: <LoginPage /> },
+			{ path: `${PAGE_PATH.LOGIN}`, element: <LoginPage /> },
 
 			{
-				path: 'body-check',
+				path: `${PAGE_PATH.BODY_CHECK}`,
 				element: <BodyCheckPage />,
 			},
 		],
 	},
 	{
-		path: '/body-check',
+		path: `/${PAGE_PATH.BODY_CHECK}`,
 		element: <StylingLayout />,
 		children: [
 			{
-				path: 'styling', // user id 넣어서 수정해야함
+				path: `${PAGE_PATH.STYLEING}`, // user id 넣어서 수정해야함
 				element: <ResultPage />,
 			},
 			{
-				path: 'styling/result',
+				path: `${PAGE_PATH.STYLEING}/${PAGE_PATH.RESULT}`,
 				element: <StylingPage />,
 			},
 		],
@@ -60,11 +60,11 @@ const router = createBrowserRouter([
 				element: <MyPage />,
 			},
 			{
-				path: 'result/:id', // TODO:id 임의 지정 이후 수정
+				path: `${PAGE_PATH.RESULT}/:id`, // TODO:id 임의 지정 이후 수정
 				element: <MoblieResultPage />,
 			},
 			{
-				path: 'result/detail/:id',
+				path: `${PAGE_PATH.RESULT}/${PAGE_PATH.DETAIL}/:id`,
 				element: <ResultDetail />,
 			},
 			{

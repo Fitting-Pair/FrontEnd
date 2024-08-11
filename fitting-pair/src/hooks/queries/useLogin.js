@@ -22,7 +22,7 @@ const useLogin = () => {
 				// 모바일
 				nav(`${PAGE_PATH.MY_PAGE}`);
 			} else {
-				nav(`${PAGE_PATH.BODY_CHECK}`);
+				nav(`/${PAGE_PATH.BODY_CHECK}`);
 			}
 		},
 		onError: error => {

@@ -11,7 +11,7 @@ const usePostImg = () => {
 		mutationFn: postImg,
 		onSuccess: data => {
 			console.log(data);
-			nav(`${PAGE_PATH.BODY_CHECK}/${PAGE_PATH.STYLEING}`, { replace: true });
+			nav(`/${PAGE_PATH.BODY_CHECK}/${PAGE_PATH.STYLEING}`, { replace: true });
 		},
 		onError: error => {
 			console.log(error);
