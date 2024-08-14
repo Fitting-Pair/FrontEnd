@@ -24,7 +24,7 @@ const API_PATH = {
 	REFRESH: 'auth/reissue-token',
 
 	// image
-	UPLOAD_USER_IMAGE: '/usersimg/upload',
+	UPLOAD_USER_IMAGE: '/userimg/upload',
 };
 
 export { PAGE_PATH, API_PATH };
