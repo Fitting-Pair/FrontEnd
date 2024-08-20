@@ -25,6 +25,9 @@ const API_PATH = {
 
 	// image
 	UPLOAD_USER_IMAGE: '/userimg/upload',
+
+	// result
+	RESULT: '/result',
 };
 
 export { PAGE_PATH, API_PATH };

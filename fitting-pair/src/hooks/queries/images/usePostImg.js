@@ -4,14 +4,20 @@ import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
 import theme from '../../../styles/theme';
 import { PAGE_PATH } from '../../../constants';
+import useLoadingStore from '../../../store/useLoadingStore';
 
 const usePostImg = () => {
 	const nav = useNavigate();
+	const { setLoading } = useLoadingStore(state => state);
+
 	return useMutation({
 		mutationFn: postImg,
 		onSuccess: data => {
 			console.log(data);
-			nav(`/${PAGE_PATH.BODY_CHECK}/${PAGE_PATH.STYLEING}`, { replace: true });
+			setLoading(true);
+			nav(`/${PAGE_PATH.BODY_CHECK}/${PAGE_PATH.STYLEING}/${data.data.imgId}`, {
+				replace: true,
+			});
 		},
 		onError: error => {
 			console.log(error);

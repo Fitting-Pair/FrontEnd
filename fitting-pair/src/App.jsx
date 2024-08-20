@@ -42,7 +42,7 @@ const router = createBrowserRouter([
 		element: <StylingLayout />,
 		children: [
 			{
-				path: `${PAGE_PATH.STYLEING}`, // user id 넣어서 수정해야함
+				path: `${PAGE_PATH.STYLEING}/:imgId`,
 				element: <ResultPage />,
 			},
 			{
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
 				element: <MyPage />,
 			},
 			{
-				path: `${PAGE_PATH.RESULT}/:id`, // TODO:id 임의 지정 이후 수정
+				path: `${PAGE_PATH.RESULT}/:id`,
 				element: <MoblieResultPage />,
 			},
 			{
