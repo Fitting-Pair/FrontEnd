@@ -17,9 +17,15 @@ const Wrap = styled.div`
     border-radius: 24px;
     box-shadow: 0px 6px 12px -8px rgba(0, 0, 0, 0.5);
 
-    &:focus-within {
-        outline: 2px solid red;
-    }
+    &:hover {
+			cursor: pointer;
+			box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.5);
+	}
+
+	&:focus {
+			background-color: blue;
+			transition: 0.5s;
+	}
 `
 
 export { Wrap, ImageBox };
