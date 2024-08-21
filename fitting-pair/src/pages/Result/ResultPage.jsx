@@ -4,7 +4,7 @@ import resultImg from '../../assets/images/result.png';
 import { Icon, Loading } from '../../components';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLoadingStore from '../../store/useLoadingStore';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getBodyCheckResult } from '../../api';
 
 // styling 페이지
@@ -12,25 +12,30 @@ const ResultPage = () => {
 	const nav = useNavigate();
 	const { imgId } = useParams();
 	const { loading, setLoading } = useLoadingStore(state => state);
+	const [result, setResult] = useState(null);
+
+	console.log(loading);
 
 	const fetchResult = async () => {
 		try {
-			const data = await getBodyCheckResult(imgId);
-			console.log(data);
+			const { data } = await getBodyCheckResult(imgId);
 			return data;
 		} catch (error) {
 			console.error(error);
 		}
 
 		setLoading(false);
+		console.log('loading: ', loading);
 	};
 
 	useEffect(() => {
 		const timer = setTimeout(
 			() => {
-				fetchResult();
+				const data = fetchResult();
+				console.log(data);
+				setResult(data);
 			},
-			1000 * 60 * 3,
+			1000 * 60 * 2.5,
 		);
 
 		return () => clearTimeout(timer);
@@ -46,7 +51,7 @@ const ResultPage = () => {
 				<S.ContentResultContainer>
 					<S.ResultWrapper>
 						<S.ResultTitle>
-							YOU ARE <span>SQUARE</span> BODY.
+							YOU ARE <span>{result.bodyTypeName}</span> BODY.
 						</S.ResultTitle>
 						<S.ResultImg>
 							<img src={resultImg} />
