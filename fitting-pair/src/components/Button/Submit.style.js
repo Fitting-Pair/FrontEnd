@@ -19,7 +19,9 @@ const Container = styled.button`
 	}
 
 	&:disabled {
+		background-color: ${theme.COLOR.GRAY};
 		opacity: 0.7;
+		cursor: not-allowed;
 	}
 `;
 
