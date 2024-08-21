@@ -3,58 +3,11 @@ import theme from '../../styles/theme';
 
 const Container = styled.div`
 	${theme.ALIGN.COLUMN_CENTER};
-`;
 
-const IconWrapper = styled.div`
-	display: flex;
-	font-size: 13px;
-	margin: 20px 5px 24px 5px;
-`;
-
-const Icon = styled.div`
-	${theme.ALIGN.ROW_CENTER};
-	width: 100px;
-	height: 33px;
-	background-color: white;
-	border-radius: 20px;
-
-	padding: 10px;
-	margin: 6px;
-
-	font-family: ${theme.FONT.ROBOTO_MEDIUM};
-
-	img {
-		margin-right: 10px;
-		width: 13%;
-	}
-
-	@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
-		font-size: 17px;
-		width: 135px;
-		height: 43px;
-		border-radius: 50px;
-	}
-
-	@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-		font-size: 15px;
-		width: 110px;
-		height: 37px;
-		border-radius: 50px;
-	}
-`;
-
-const IconBlack = styled(Icon)`
-	width: 130px;
-
-	color: white;
-	background-color: black;
-
-	@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
-		width: 135px;
-	}
-
-	@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-		width: 145px;
+	@media ${theme.WINDOW_SIZE.MOBILE} {
+		position: relative;
+		width: 100%;
+		overflow-x: hidden;
 	}
 `;
 
@@ -84,15 +37,18 @@ const ResultWrapper = styled.div`
 	border-radius: 24px;
 	background-color: white;
 	opacity: 0.8;
+
+	@media ${theme.WINDOW_SIZE.MOBILE} {
+		height: 50%;
+		background-color: transparent;
+	}
 `;
 
 const ClothWrapper = styled.div`
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: left;
 	width: 996px;
-	height: 342px;
 	margin: 24px 24px;
 	border-radius: 24px;
 
@@ -119,6 +75,23 @@ const ClothWrapper = styled.div`
 		border-radius: 24px;
 		box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.5);
 	}
+
+	@media ${theme.WINDOW_SIZE.MOBILE} {
+		section {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		div {
+			margin: 15px 0px;
+		}
+
+		span {
+			font-size: 45px;
+			margin-top: 0px;
+		}
+	}
 `;
 
 const ResultTitle = styled.div`
@@ -128,18 +101,40 @@ const ResultTitle = styled.div`
 	span {
 		color: #ffc791;
 	}
+
+	@media ${theme.WINDOW_SIZE.MOBILE} {
+		font-family: ${theme.FONT.JIMHURIA_REGULAR};
+		font-size: 45px;
+		margin-top: 0px;
+	}
 `;
 
-const ResultImg = styled.div``;
+const ResultImg = styled.div`
+	img {
+		@media ${theme.WINDOW_SIZE.MOBILE} {
+			margin: 30px 0px;
+			width: 300px;
+			height: 300px;
+		}
+	}
+`;
 
 const ResultExplainWrapper = styled.div`
 	display: flex;
+
+	@media ${theme.WINDOW_SIZE.MOBILE} {
+		flex-direction: column;
+	}
 `;
 
 const ContentResultContainer = styled.div`
+	margin: 20px 0px;
 	position: relative;
 	display: grid;
 	place-items: center;
+
+	@media ${theme.WINDOW_SIZE.MOBILE} {
+	}
 `;
 
 const Button = styled.div`
@@ -164,18 +159,26 @@ const Button = styled.div`
 	img {
 		width: 27%;
 	}
+
+	@media ${theme.WINDOW_SIZE.MOBILE} {
+		display: none;
+	}
+`;
+
+const QRImg = styled.div`
+	@media ${theme.WINDOW_SIZE.MOBILE} {
+		display: none;
+	}
 `;
 
 export {
+	QRImg,
 	Button,
 	ClothWrapper,
 	ResultExplainWrapper,
 	ResultImg,
 	ResultTitle,
 	Container,
-	IconWrapper,
-	Icon,
-	IconBlack,
 	ContentWrapper,
 	ContentResultContainer,
 	ResultWrapper,
