@@ -13,7 +13,7 @@ const DeleteOverlay = styled.div`
 	align-items: center;
 `;
 
-const Deletecontent = styled.div`
+const DeleteContent = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -29,8 +29,7 @@ const Deletecontent = styled.div`
 
 	p {
 		margin-top: 12px;
-        font-family: ${theme.FONT.ROBOTO_BOLD};
-        
+		font-family: ${theme.FONT.ROBOTO_BOLD};
 	}
 
 	button {
@@ -43,7 +42,7 @@ const Deletecontent = styled.div`
 		border: none;
 		border-radius: 25px;
 		color: white;
-		background-color: #6E6C6A;
+		background-color: #6e6c6a;
 		font-weight: bold;
 		font-size: 12px;
 		box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.5);
@@ -60,22 +59,13 @@ const Deletecontent = styled.div`
 `;
 
 const XWrapper = styled.div`
-
-    height: 20px;
-    width: 9px;
-
+	height: 20px;
+	width: 9px;
 `;
 
 const WarningWrapper = styled.div`
-
-    heith: 110px;
-    width: 110px;
-
+	height: 110px;
+	width: 110px;
 `;
 
-export { 
-    Deletecontent,
-    DeleteOverlay,
-    XWrapper,
-    WarningWrapper,
- };
+export { DeleteContent, DeleteOverlay, XWrapper, WarningWrapper };

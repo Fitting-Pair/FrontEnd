@@ -36,8 +36,8 @@ const EditingWrapper = styled.div`
 	text-align: center;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 	flex-basis: 80px;
-
 `;
+
 const EditingContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -56,7 +56,7 @@ const InfoWrapper = styled.div`
 	padding-left: 20px;
 	border-radius: 16px;
 	background-color: #fff;
-	color: #6E6C6A;
+	color: #6e6c6a;
 	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
 	flex-basis: 300px;
 	align-items: left;
@@ -65,7 +65,7 @@ const InfoWrapper = styled.div`
 
 const SubmmitWrapper = styled.div`
 	margin-top: 100px;
-	background-color: #7C9C80;
+	background-color: #7c9c80;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border-radius: 16px;
@@ -86,17 +86,14 @@ const DeleteTitle = styled.div`
 	color: #fff;
 	width: 77%;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-
-
 `;
 
 export {
 	Container,
 	EditingTitle,
 	EditingWrapper,
-	Container,
+	EditingContainer,
 	SubmmitWrapper,
 	InfoWrapper,
-	DeleteTitle
-
+	DeleteTitle,
 };
