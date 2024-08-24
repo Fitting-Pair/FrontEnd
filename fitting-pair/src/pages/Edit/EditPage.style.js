@@ -18,7 +18,7 @@ const Container = styled.div`
 	);
 `;
 
-const ModifyTitle = styled.div`
+const EditingTitle = styled.div`
 	margin-top: 130px;
 	margin-bottom: 50px;
 	${theme.ALIGN.COLUMN_CENTER};
@@ -28,7 +28,7 @@ const ModifyTitle = styled.div`
 	line-height: 70px;
 `;
 
-const ModifyWrapper = styled.div`
+const EditingWrapper = styled.div`
 	margin-top: 30px;
 	font-family: ${theme.FONT.JIMHURIA_REGULAR};
 	font-size: 25px;
@@ -38,7 +38,7 @@ const ModifyWrapper = styled.div`
 	flex-basis: 80px;
 
 `;
-const ModifyContainer = styled.div`
+const EditingContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -63,7 +63,7 @@ const InfoWrapper = styled.div`
 	flex-direction: left;
 `;
 
-const EditingWrapper = styled.div`
+const SubmmitWrapper = styled.div`
 	margin-top: 100px;
 	background-color: #7C9C80;
 	padding-top: 20px;
@@ -92,10 +92,10 @@ const DeleteTitle = styled.div`
 
 export {
 	Container,
-	ModifyTitle,
-	ModifyWrapper,
-	ModifyContainer,
+	EditingTitle,
 	EditingWrapper,
+	Container,
+	SubmmitWrapper,
 	InfoWrapper,
 	DeleteTitle
 
