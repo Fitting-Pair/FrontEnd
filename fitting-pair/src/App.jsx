@@ -73,9 +73,9 @@ const router = createBrowserRouter([
 				element: <ModifyPage />,
 			},
 			{
-				path: `${PAGE_PATH.EDITPage}/:id`,
-				element: <EditPage />
-			}
+				path: `${PAGE_PATH.EDIT}/:id`,
+				element: <EditPage />,
+			},
 		],
 	},
 ]);
