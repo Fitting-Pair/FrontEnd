@@ -6,6 +6,7 @@ const Container = styled.div`
 	height: 100vh;
 
 	button {
+		cursor: pointer;
 		${theme.ALIGN.ROW_CENTER};
 		padding: 8px 20px;
 		border: none;

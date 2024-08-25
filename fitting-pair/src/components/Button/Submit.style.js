@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import theme from '../../styles/theme';
 
 const Container = styled.button`
+	cursor: pointer;
 	width: ${props => props.width};
 	height: 50px;
 	background-color: ${theme.COLOR.GREEN};
