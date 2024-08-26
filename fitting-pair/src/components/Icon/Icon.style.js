@@ -4,8 +4,11 @@ import theme from '../../styles/theme';
 const Container = styled.div`
 	display: flex;
 	font-size: 13px;
+	margin: 20px 5px 20px 5px;
 
-	margin: 20px 5px 95px 5px;
+	@media ${theme.WINDOW_SIZE.MOBILE} {
+		display: none;
+	}
 `;
 
 const Icon = styled.div`

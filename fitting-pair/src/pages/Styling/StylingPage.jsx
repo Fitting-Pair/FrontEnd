@@ -4,6 +4,7 @@ import resultImg from '../../assets/images/result.png';
 import { Icon } from '../../components';
 import Modal from '../../components/Modal/Modal';
 import { useState } from 'react';
+import QRCodeGenerator from '../../components/QRCodeGenerator/QRCodeGenerator';
 
 // result 페이지
 const StylingPage = () => {
@@ -72,8 +73,10 @@ const StylingPage = () => {
 							</div>
 						</section>
 					</S.ClothWrapper>
-
-					<S.Button onClick={openModal}>Store</S.Button>
+					{/* <S.Button onClick={openModal}>Store</S.Button> */}
+					<S.QRImg>
+						<QRCodeGenerator />
+					</S.QRImg>
 					<Modal isVisible={isModalVisible} onClose={closeModal} />
 				</S.ResultWrapper>
 			</S.ContentResultContainer>

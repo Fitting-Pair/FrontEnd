@@ -1,11 +1,20 @@
 import * as S from './ResultPage.style';
-import topImg from '../../assets/images/top.png';
 import resultImg from '../../assets/images/result.png';
 import { Icon, Loading } from '../../components';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLoadingStore from '../../store/useLoadingStore';
 import { useEffect, useState } from 'react';
 import { getBodyCheckResult } from '../../api';
+import { apparel } from '../../constants/apparel';
+import PersonalCloth from '../../components/PersonalCloth/PersonalCloth';
+import ApparelComponent from '../../components/ApparelComponent/ApparelComponent';
+import { SwiperSlide } from 'swiper/react';
+
+// import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+// import "swiper/css/scrollbars";
 
 // styling 페이지
 const ResultPage = () => {
@@ -63,57 +72,32 @@ const ResultPage = () => {
 							</S.ContentWrapper>
 						</S.ResultExplainWrapper>
 					</S.ResultWrapper>
+
 					<S.ClothWrapper>
-						<span>OUTER</span>
-						<section>
-							<div>
-								<img src={topImg} />
-							</div>
-							<div>
-								<img src={topImg} />
-							</div>
-							<div>
-								<img src={topImg} />
-							</div>
-							<div>
-								<img src={topImg} />
-							</div>
-						</section>
+						<S.Category>TOP</S.Category>
+						<S.Slider>
+							<ApparelComponent>
+								{apparel.map((e, idx) => (
+									<SwiperSlide key={idx}>
+										<PersonalCloth apparel={e} />
+									</SwiperSlide>
+								))}
+							</ApparelComponent>
+						</S.Slider>
 					</S.ClothWrapper>
 					<S.ClothWrapper>
-						<span>TOP</span>
-						<section>
-							<div>
-								<img src={topImg} />
-							</div>
-							<div>
-								<img src={topImg} />
-							</div>
-							<div>
-								<img src={topImg} />
-							</div>
-							<div>
-								<img src={topImg} />
-							</div>
-						</section>
+						<S.Category>BOTTOM</S.Category>
+						<S.Slider>
+							<ApparelComponent>
+								{apparel.map((e, idx) => (
+									<SwiperSlide key={idx}>
+										<PersonalCloth apparel={e} />
+									</SwiperSlide>
+								))}
+							</ApparelComponent>
+						</S.Slider>
 					</S.ClothWrapper>
-					<S.ClothWrapper>
-						<span>BOTTOM</span>
-						<section>
-							<div>
-								<img src={topImg} />
-							</div>
-							<div>
-								<img src={topImg} />
-							</div>
-							<div>
-								<img src={topImg} />
-							</div>
-							<div>
-								<img src={topImg} />
-							</div>
-						</section>
-					</S.ClothWrapper>
+
 					<S.Button onClick={() => nav('/body-check/styling/result')}>
 						Generate
 					</S.Button>

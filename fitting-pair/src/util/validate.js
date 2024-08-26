@@ -30,6 +30,8 @@ function validateSignUp(values) {
 
 	if (values.userHeight === '') {
 		errors.userHeight = '키를 입력해주세요.';
+	} else if (!/^\d{3}$/.test(values.userHeight)) {
+		errors.userHeight = '3자리 숫자로 입력해주세요.';
 	}
 
 	if (values.userGender === '') {

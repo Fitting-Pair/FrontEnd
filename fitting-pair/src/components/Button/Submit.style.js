@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import theme from '../../styles/theme';
 
 const Container = styled.button`
+	cursor: pointer;
 	width: ${props => props.width};
 	height: 50px;
 	background-color: ${theme.COLOR.GREEN};
@@ -19,7 +20,9 @@ const Container = styled.button`
 	}
 
 	&:disabled {
+		background-color: ${theme.COLOR.GRAY};
 		opacity: 0.7;
+		cursor: not-allowed;
 	}
 `;
 

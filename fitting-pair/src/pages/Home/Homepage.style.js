@@ -3,9 +3,10 @@ import theme from '../../styles/theme';
 
 const Container = styled.div`
 	${theme.ALIGN.COLUMN_CENTER};
-	height: 100vh;
+	height: 100dvh;
 
 	button {
+		cursor: pointer;
 		${theme.ALIGN.ROW_CENTER};
 		padding: 8px 20px;
 		border: none;
