@@ -28,20 +28,18 @@ const ResultPage = () => {
 		const timer = setTimeout(
 			async () => {
 				const data = await fetchResult();
-				setResult(data);
+				setResult(data?.data);
 				setLoading(false);
 			},
-			1000 * 60 * 3,
+			1000 * 60 * 2.5,
 		);
 
 		return () => clearTimeout(timer);
 	}, []);
 
-	console.log(result);
-
 	if (loading) {
 		return <Loading />;
-	} else {
+	} else if (!loading && result) {
 		return (
 			<S.Container>
 				<Icon blackNum={2} />
@@ -49,39 +47,19 @@ const ResultPage = () => {
 				<S.ContentResultContainer>
 					<S.ResultWrapper>
 						<S.ResultTitle>
-							YOU ARE <span>{result?.bodyTypeName}</span> BODY.
+							YOU ARE <span>{result.bodyTypeName}</span> BODY.
 						</S.ResultTitle>
 						<S.ResultImg>
 							<img src={resultImg} />
 						</S.ResultImg>
 						<S.ResultExplainWrapper>
 							<S.ContentWrapper>
-								<span>FEATURES</span>
-								<p>
-									consectetur. Vestibulum sit facilisis purus orci commodo
-									ornare. Donec fermentum urna sit sed est cras faucibus in et.
-									Eget habitasse vitae in in dictum viverra velit. Lorem morbi
-									massa neque massa adipiscing pharetra facilisi sagittis
-									viverra. Aliquam nec volutpat nulla aenean. Sed sollicitudin
-									odio felis imperdiet faucibus quis mattis porttitor. Duis
-									vehicula aliquet dui nulla sagittis potenti purus dignissim.
-									Lacus dictum eget pellentesque quis nunc lectus. Dignissim
-									amet ultricies velit etiam aenean.
-								</p>
+								<span>체형 특징</span>
+								<p>{result.bodyTypeFeature}</p>
 							</S.ContentWrapper>
 							<S.ContentWrapper>
-								<span>FEATURES</span>
-								<p>
-									consectetur. Vestibulum sit facilisis purus orci commodo
-									ornare. Donec fermentum urna sit sed est cras faucibus in et.
-									Eget habitasse vitae in in dictum viverra velit. Lorem morbi
-									massa neque massa adipiscing pharetra facilisi sagittis
-									viverra. Aliquam nec volutpat nulla aenean. Sed sollicitudin
-									odio felis imperdiet faucibus quis mattis porttitor. Duis
-									vehicula aliquet dui nulla sagittis potenti purus dignissim.
-									Lacus dictum eget pellentesque quis nunc lectus. Dignissim
-									amet ultricies velit etiam aenean.
-								</p>
+								<span>코디 주의사항</span>
+								<p>{result.bodyTypeCareful}</p>
 							</S.ContentWrapper>
 						</S.ResultExplainWrapper>
 					</S.ResultWrapper>
@@ -142,6 +120,8 @@ const ResultPage = () => {
 				</S.ContentResultContainer>
 			</S.Container>
 		);
+	} else {
+		return <S.Container>오류발생</S.Container>;
 	}
 };
 
