@@ -14,32 +14,30 @@ const ResultPage = () => {
 	const { loading, setLoading } = useLoadingStore(state => state);
 	const [result, setResult] = useState(null);
 
-	console.log(loading);
-
 	const fetchResult = async () => {
 		try {
-			const { data } = await getBodyCheckResult(imgId);
+			const data = await getBodyCheckResult(imgId);
+
 			return data;
 		} catch (error) {
 			console.error(error);
 		}
-
-		setLoading(false);
-		console.log('loading: ', loading);
 	};
 
 	useEffect(() => {
 		const timer = setTimeout(
-			() => {
-				const data = fetchResult();
-				console.log(data);
+			async () => {
+				const data = await fetchResult();
 				setResult(data);
+				setLoading(false);
 			},
-			1000 * 60 * 2.5,
+			1000 * 60 * 3,
 		);
 
 		return () => clearTimeout(timer);
 	}, []);
+
+	console.log(result);
 
 	if (loading) {
 		return <Loading />;
@@ -51,7 +49,7 @@ const ResultPage = () => {
 				<S.ContentResultContainer>
 					<S.ResultWrapper>
 						<S.ResultTitle>
-							YOU ARE <span>{result.bodyTypeName}</span> BODY.
+							YOU ARE <span>{result?.bodyTypeName}</span> BODY.
 						</S.ResultTitle>
 						<S.ResultImg>
 							<img src={resultImg} />
