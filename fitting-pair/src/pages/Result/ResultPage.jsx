@@ -5,7 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useLoadingStore from '../../store/useLoadingStore';
 import { useEffect, useState } from 'react';
 import { getBodyCheckResult } from '../../api';
-import { apparel } from '../../constants/apparel';
 import PersonalCloth from '../../components/PersonalCloth/PersonalCloth';
 import ApparelComponent from '../../components/ApparelComponent/ApparelComponent';
 import { SwiperSlide } from 'swiper/react';
@@ -14,7 +13,6 @@ import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-// import "swiper/css/scrollbars";
 
 // styling 페이지
 const ResultPage = () => {
@@ -40,7 +38,7 @@ const ResultPage = () => {
 				setResult(data?.data);
 				setLoading(false);
 			},
-			1000 * 60 * 2.5,
+			1000 * 60 * 3,
 		);
 
 		return () => clearTimeout(timer);
@@ -74,24 +72,24 @@ const ResultPage = () => {
 					</S.ResultWrapper>
 
 					<S.ClothWrapper>
-						<S.Category>TOP</S.Category>
+						<S.Category>상의</S.Category>
 						<S.Slider>
 							<ApparelComponent>
-								{apparel.map((e, idx) => (
+								{result.clothesDto.topClothesItems.map((e, idx) => (
 									<SwiperSlide key={idx}>
-										<PersonalCloth apparel={e} />
+										<PersonalCloth cloth={e} />
 									</SwiperSlide>
 								))}
 							</ApparelComponent>
 						</S.Slider>
 					</S.ClothWrapper>
 					<S.ClothWrapper>
-						<S.Category>BOTTOM</S.Category>
+						<S.Category>하의</S.Category>
 						<S.Slider>
 							<ApparelComponent>
-								{apparel.map((e, idx) => (
+								{result.clothesDto.bottomClothesItems.map((e, idx) => (
 									<SwiperSlide key={idx}>
-										<PersonalCloth apparel={e} />
+										<PersonalCloth cloth={e} />
 									</SwiperSlide>
 								))}
 							</ApparelComponent>

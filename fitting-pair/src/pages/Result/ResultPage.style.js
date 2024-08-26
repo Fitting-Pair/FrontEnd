@@ -95,8 +95,6 @@ const ClothWrapper = styled.div`
 	height: 342px;
 	margin: 24px 24px;
 	border-radius: 24px;
-
-		
 `;
 
 const Category = styled.div`
@@ -162,15 +160,18 @@ const Button = styled.div`
 `;
 
 const Slider = styled.div`
-	display: flex;
-	flex-direction: row;
-	justify-content: left;
-	align-items: center;
+	${theme.ALIGN.ROW_CENTER};
+	width: 100%;
 
-	.swiper-slide-next {
+	.swiper {
+		width: 100%;
+		height: 100%;
 	}
 
-	.swiper-slide-prev {
+	.swiper-slide {
+		${theme.ALIGN.COLUMN_CENTER};
+		width: 250px;
+		margin: 0 10px;
 	}
 `;
 

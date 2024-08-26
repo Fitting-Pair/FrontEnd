@@ -1,21 +1,12 @@
-import Icon from "../Icon/Icon";
-import * as S from "./PersonalCloth.style";
-import resultImg from "../../assets/images/result.png";
-import topImg from "../../assets/images/top.png";
-import { apparel } from "../../constants/apparel";
+import * as S from './PersonalCloth.style';
 
-const PersonalCloth = ({ apparel }) => {
-  const { cloth } = apparel;
-  return (
-        <S.ImageBox>
-            {cloth.map((e) => (
-              <S.Wrap key={e.id}>
-                <img 
-                src={e.image} />
-              </S.Wrap>
-            ))}
-        </S.ImageBox>
-  );
+const PersonalCloth = ({ cloth }) => {
+	const { imageUrl } = cloth;
+	return (
+		<S.Wrap>
+			<img src={imageUrl} />
+		</S.Wrap>
+	);
 };
 
 export default PersonalCloth;
