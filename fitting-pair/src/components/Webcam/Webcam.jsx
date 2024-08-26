@@ -109,8 +109,6 @@ const Webcam = () => {
 
 	const handleNextClick = () => {
 		if (formData) {
-			console.log(formData);
-			console.log('FormData to be sent:', formData.get('imageFile'));
 			mutate(formData);
 		}
 	};

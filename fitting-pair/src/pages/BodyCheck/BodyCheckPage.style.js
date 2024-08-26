@@ -95,6 +95,11 @@ const ContentWrapper = styled.div`
 		margin-bottom: 10px;
 	}
 
+	li {
+		list-style-type: none;
+		padding: 3px 0;
+	}
+
 	@media ${theme.WINDOW_SIZE.IPAD_PRO} {
 		font-size: 20px;
 	}
