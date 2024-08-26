@@ -1,16 +1,27 @@
-## 💬 Commit Convention
-```
-* feat : 새로운 기능 추가
-* fix : 버그 수정
-* design : css등 사용자 UI 디자인 변경
-* docs : 문서 수정 및 추가
-* test : 테스트 코드 추가, 리팩토링 테스트 코드 추가
-* refact : 코드 리팩토링(사용하지 않거나 중복된 코드를 정리)
-* style : 코드 의미에 영향을 주지 않는 변경사항(코드 포맷팅, 세미콜론 누락 등)
-* chore : 빌드 부분 혹은 패키지 매니저 수정사항(.gitignore 수정 같은 경우)
-* remove : 파일을 삭제하는 작업만 수행한 경우
-* rename : 파일 혹은 폴더명을 수정하거나 옮기는 작업만인 경우
-```
+#  👚 체형 분석을 통해 적합한 패션을 추천해주는 패션 컨설팅 서비스, fitting pair
+오프라인 매장에서 실시간으로 자신의 체형을 분석해 맞는 패션을 추천해주는 패션 컨설팅 키오스크
 
-- 깃모지 사용 [gitmoji](https://gitmoji.dev/)
-- ex) git commit -m “feat: ✨ 회원가입 기능 추가"
+<br/><br/>
+
+## 🖥️ Developers
+<div align="center">
+
+|FE | FE | FE | BE | BE | 
+| :---: | :---: | :---: | :---: | :---: |
+|정혜원|장혜원|정현욱|김채연|김승중|
+|   [@hijjoy](https://github.com/hijjoy)   |  [@hyewoniiiii](https://github.com/hyewoniiiii)     |  [@JeongWhale](https://github.com/JeongWhale)     | [@chaerish](https://github.com/chaerish)     |  [@kimsj0970](https://github.com/kimsj0970)     | 
+</div>
+
+<br/><br/>
+
+## 🎯 Commit Convention
+
+- ✨ feat: A new feature or enhancement
+- 🐛 fix: A bug fix
+- 📝 docs: Documentation changes
+- 🎨 style: Code style changes (formatting, missing semi colons, etc)
+- ♻️ refactor: Code refactoring
+- ✅ test: Adding or modifying tests
+- 🚀 deploy: Deploying stuff
+- 🔧 chore: Other changes that don't modify src or test files
+- ⚙️ settings: Changing configuration files
