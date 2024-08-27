@@ -1,6 +1,6 @@
 import * as S from './ResultPage.style';
 import resultImg from '../../assets/images/result.png';
-import { Icon, Loading } from '../../components';
+import { Error, Icon, Loading } from '../../components';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLoadingStore from '../../store/useLoadingStore';
 import { useEffect, useState } from 'react';
@@ -8,6 +8,7 @@ import { getBodyCheckResult } from '../../api';
 import PersonalCloth from '../../components/PersonalCloth/PersonalCloth';
 import ApparelComponent from '../../components/ApparelComponent/ApparelComponent';
 import { SwiperSlide } from 'swiper/react';
+import { PAGE_PATH } from '../../constants';
 
 // import Swiper styles
 import 'swiper/css';
@@ -45,7 +46,7 @@ const ResultPage = () => {
 	}, []);
 
 	if (loading) {
-		return <Loading />;
+		return <Loading text={'분석중 ...'} />;
 	} else if (!loading && result) {
 		return (
 			<S.Container>
@@ -96,14 +97,20 @@ const ResultPage = () => {
 						</S.Slider>
 					</S.ClothWrapper>
 
-					<S.Button onClick={() => nav('/body-check/styling/result')}>
+					<S.Button
+						onClick={() =>
+							nav(
+								`/${PAGE_PATH.BODY_CHECK}/${PAGE_PATH.STYLEING}/${PAGE_PATH.RESULT}`,
+							)
+						}
+					>
 						Generate
 					</S.Button>
 				</S.ContentResultContainer>
 			</S.Container>
 		);
 	} else {
-		return <S.Container>오류발생</S.Container>;
+		return <Error />;
 	}
 };
 

@@ -1,6 +1,6 @@
 import * as S from './LoginPage.style';
 import LOGO from '../../assets/images/Logo.webp';
-import { Submit } from '../../components';
+import { Loading, Submit } from '../../components';
 import Icon from '../../assets/images/icon.png';
 import useForm from '../../hooks/useForm';
 import { validatePhoneNumber } from '../../util';
@@ -14,13 +14,17 @@ const LoginPage = () => {
 		validate: validatePhoneNumber,
 	});
 
-	const { mutate } = useLogin();
+	const { mutate, isPending } = useLogin();
 
 	const handleSubmit = () => {
 		mutate({
 			phoneNumber: loginForm.values.phoneNumber.replace(/-/g, ''),
 		});
 	};
+
+	if (isPending) {
+		return <Loading text={'로그인 중 ...'} />;
+	}
 
 	return (
 		<S.Container>

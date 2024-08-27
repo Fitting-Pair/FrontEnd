@@ -10,6 +10,7 @@ import MFButton from '../../components/Button/MFButton/MFButton';
 import useForm from '../../hooks/useForm';
 import { validateSignUp } from '../../util';
 import { useSignup } from '../../hooks/queries/useSignup';
+import { Loading } from '../../components';
 
 const SignUpPage = () => {
 	const signupForm = useForm({
@@ -22,7 +23,7 @@ const SignUpPage = () => {
 		validate: validateSignUp,
 	});
 
-	const { mutate } = useSignup();
+	const { mutate, isPending } = useSignup();
 
 	const handleSubmit = () => {
 		mutate({
@@ -42,6 +43,10 @@ const SignUpPage = () => {
 			userGender === ''
 		);
 	};
+
+	if (isPending) {
+		return <Loading text={'회원가입 중 ...'} />;
+	}
 
 	return (
 		<S.Container>
