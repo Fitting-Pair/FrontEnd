@@ -1,5 +1,4 @@
 import * as S from './ResultPage.style';
-import resultImg from '../../assets/images/result.png';
 import { Error, Icon, Loading } from '../../components';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLoadingStore from '../../store/useLoadingStore';
@@ -58,7 +57,7 @@ const ResultPage = () => {
 							YOU ARE <span>{result.bodyTypeName}</span> BODY.
 						</S.ResultTitle>
 						<S.ResultImg>
-							<img src={resultImg} />
+							<img src={result.objFile} />
 						</S.ResultImg>
 						<S.ResultExplainWrapper>
 							<S.ContentWrapper>
