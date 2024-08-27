@@ -1,11 +1,11 @@
 import * as S from './Input.style';
 
-const Input = ({ text, icon, half, signup }) => {
+const Input = ({ text, icon, half, signup, placeholder }) => {
 	if (text === 'Phone') {
 		return (
 			<S.Container $half={half}>
 				<input
-					placeholder={text}
+					placeholder={placeholder}
 					{...signup.getPhoneNumInputProps('phoneNumber')}
 					maxLength={13}
 				/>
@@ -17,12 +17,15 @@ const Input = ({ text, icon, half, signup }) => {
 			<S.Container $half={half}>
 				{text === 'Height' ? (
 					<input
-						placeholder={text}
+						placeholder={placeholder}
 						{...signup.getTextInputProps('userHeight')}
 						maxLength={3}
 					/>
 				) : (
-					<input placeholder={text} {...signup.getTextInputProps('userName')} />
+					<input
+						placeholder={placeholder}
+						{...signup.getTextInputProps('userName')}
+					/>
 				)}
 
 				<img src={icon} />

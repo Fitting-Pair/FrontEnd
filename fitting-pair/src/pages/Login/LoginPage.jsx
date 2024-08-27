@@ -31,12 +31,11 @@ const LoginPage = () => {
 			<S.LogoWrapper>
 				<img src={LOGO} />
 			</S.LogoWrapper>
-
 			<S.Wrapper onSubmit={e => e.preventDefault()}>
 				<S.InputBox>
 					<img src={Icon} />
 					<input
-						placeholder="Phone"
+						placeholder="휴대폰 번호"
 						{...loginForm.getPhoneNumInputProps('phoneNumber')}
 						maxLength={13}
 					/>
@@ -45,7 +44,7 @@ const LoginPage = () => {
 					<S.ErrorMeg>{loginForm.errors.phoneNumber}</S.ErrorMeg>
 				)}
 				<Submit
-					text={'Login'}
+					text={'log in'}
 					width={'268px'}
 					login={true}
 					onClick={handleSubmit}

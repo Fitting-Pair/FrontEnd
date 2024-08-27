@@ -64,6 +64,7 @@ const GoLogin = styled.div`
 	justify-content: flex-start;
 
 	a {
+		margin-left: 5px;
 		text-decoration: none;
 		color: inherit;
 		text-decoration-line: underline;

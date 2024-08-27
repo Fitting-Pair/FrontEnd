@@ -52,13 +52,25 @@ const SignUpPage = () => {
 		<S.Container>
 			<S.Logo src={SIGNUP} />
 			<div>
-				<Input text={'Nickname'} icon={Icon} half={false} signup={signupForm} />
+				<Input
+					text={'Nickname'}
+					icon={Icon}
+					half={false}
+					signup={signupForm}
+					placeholder={'닉네임'}
+				/>
 				{signupForm.errors.userName && signupForm.touched.userName && (
 					<S.ErrorMeg>{signupForm.errors.userName}</S.ErrorMeg>
 				)}
 			</div>
 			<div>
-				<Input text={'Phone'} icon={Phone} half={false} signup={signupForm} />
+				<Input
+					text={'Phone'}
+					icon={Phone}
+					half={false}
+					signup={signupForm}
+					placeholder={'휴대폰 번호'}
+				/>
 				{signupForm.errors.phoneNumber && signupForm.touched.phoneNumber && (
 					<S.ErrorMeg>{signupForm.errors.phoneNumber}</S.ErrorMeg>
 				)}
@@ -73,7 +85,13 @@ const SignUpPage = () => {
 					<S.ErrorMeg>{signupForm.errors.userGender}</S.ErrorMeg>
 				)}
 				<div>
-					<Input text={'Height'} icon={Ruler} half={true} signup={signupForm} />
+					<Input
+						text={'Height'}
+						icon={Ruler}
+						half={true}
+						signup={signupForm}
+						placeholder={'키'}
+					/>
 					{signupForm.errors.userHeight && signupForm.touched.userHeight && (
 						<S.ErrorMeg>{signupForm.errors.userHeight}</S.ErrorMeg>
 					)}
@@ -88,7 +106,7 @@ const SignUpPage = () => {
 			/>
 
 			<S.GoLogin>
-				Do you have id ?<Link to="/login">Login</Link>
+				Do you have a id ?<Link to="/login">Log in</Link>
 			</S.GoLogin>
 		</S.Container>
 	);
