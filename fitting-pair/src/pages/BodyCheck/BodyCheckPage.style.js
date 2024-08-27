@@ -12,9 +12,8 @@ const Icon = styled.div`
 	${theme.ALIGN.ROW_CENTER};
 	width: 100px;
 	height: 33px;
-	background-color: white;
+	background-color: ${theme.COLOR.WHITE};
 	border-radius: 20px;
-
 	padding: 10px;
 	margin: 6px;
 
@@ -33,25 +32,17 @@ const Icon = styled.div`
 	}
 `;
 
-const TipIcon = styled(Icon)`
+const TipIcon = styled.div`
+	${theme.ALIGN.ROW_CENTER};
 	font-family: ${theme.FONT.ROBOTO_MEDIUM};
-	width: 80px;
-	height: 31px;
-
-	img {
-		width: 22%;
-	}
+	padding: 10px 20px;
+	background-color: ${theme.COLOR.WHITE};
+	margin-bottom: 10px;
 
 	@media ${theme.WINDOW_SIZE.IPAD_PRO} {
 		font-size: 18px;
-		width: 120px;
-		height: 50px;
 		margin-bottom: 30px;
 		margin-top: 0;
-
-		img {
-			width: 23px;
-		}
 	}
 `;
 

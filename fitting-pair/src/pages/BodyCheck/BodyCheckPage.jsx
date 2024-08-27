@@ -1,5 +1,4 @@
 import * as S from './BodyCheckPage.style';
-import tipImg from '../../assets/images/tip.png';
 import Webcam from '../../components/Webcam/Webcam';
 import { Icon } from '../../components';
 
@@ -10,10 +9,7 @@ const BodyCheckPage = () => {
 			<S.ContentContainer>
 				<Webcam />
 				<S.TipWrapper>
-					<S.TipIcon>
-						<img src={tipImg} />
-						Tips
-					</S.TipIcon>
+					<S.TipIcon>{`Tip ) 아래 순서를 따라해주세요.`}</S.TipIcon>
 					<S.ContentWrapper>
 						<span>촬영 버튼을 누르고 5초 후에 촬영됩니다.</span>
 						<li>1. 정면을 바라보고 사진을 찍어주세요.</li>
