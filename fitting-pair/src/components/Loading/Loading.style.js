@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import theme from '../../styles/theme';
 
 const spinning = keyframes`
   from {
@@ -18,14 +19,18 @@ const Container = styled.div`
 	position: relative;
 
 	width: 100vw;
-	height: 100vh;
+	height: 100dvh;
 
 	img {
 		position: absolute;
 		animation: ${spinning} 900ms 0s infinite linear normal;
 
-		@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+		@media ${theme.WINDOW_SIZE.IPAD_PRO} {
 			width: 11%;
+		}
+
+		@media ${theme.WINDOW_SIZE.MOBILE} {
+			width: 13%;
 		}
 	}
 `;
@@ -45,9 +50,15 @@ const LoadingText = styled.div`
 
 	z-index: 1;
 
-	@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+	@media ${theme.WINDOW_SIZE.IPAD_PRO} {
 		width: 140px;
 		height: 50px;
+	}
+
+	@media ${theme.WINDOW_SIZE.MOBILE} {
+		font-size: 10px;
+		width: 80px;
+		height: 26px;
 	}
 `;
 

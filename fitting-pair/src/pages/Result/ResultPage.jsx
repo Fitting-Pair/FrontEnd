@@ -45,7 +45,7 @@ const ResultPage = () => {
 	}, []);
 
 	if (loading) {
-		return <Loading />;
+		return <Loading text={'분석중 ...'} />;
 	} else if (!loading && result) {
 		return (
 			<S.Container>
