@@ -4,11 +4,12 @@ import { Error, Icon, Loading } from '../../components';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLoadingStore from '../../store/useLoadingStore';
 import { useEffect, useState } from 'react';
-import { getBodyCheckResult } from '../../api';
+// import { getBodyCheckResult } from '../../api';
 import PersonalCloth from '../../components/PersonalCloth/PersonalCloth';
 import ApparelComponent from '../../components/ApparelComponent/ApparelComponent';
 import { SwiperSlide } from 'swiper/react';
 import { PAGE_PATH } from '../../constants';
+import { apparel } from '../../constants';
 
 // import Swiper styles
 import 'swiper/css';
@@ -18,32 +19,39 @@ import 'swiper/css/pagination';
 // styling 페이지
 const ResultPage = () => {
 	const nav = useNavigate();
-	const { imgId } = useParams();
+	// const { imgId } = useParams();
 	const { loading, setLoading } = useLoadingStore(state => state);
 	const [result, setResult] = useState(null);
 
-	const fetchResult = async () => {
-		try {
-			const data = await getBodyCheckResult(imgId);
+	// const fetchResult = async () => {
+	// 	try {
+	// 		const data = await getBodyCheckResult(imgId);
 
-			return data;
-		} catch (error) {
-			console.error(error);
-		}
-	};
+	// 		return data;
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
+	// };
+
+	// useEffect(() => {
+	// 	const timer = setTimeout(
+	// 		async () => {
+	// 			const data = await fetchResult();
+	// 			setResult(data?.data);
+	// 			setLoading(false);
+	// 		},
+	// 		1000 * 60 * 3.5,
+	// 	);
+
+	// 	return () => clearTimeout(timer);
+	// }, []);
 
 	useEffect(() => {
-		const timer = setTimeout(
-			async () => {
-				const data = await fetchResult();
-				setResult(data?.data);
-				setLoading(false);
-			},
-			1000 * 60 * 3.5,
-		);
-
-		return () => clearTimeout(timer);
+		setLoading(false);
+		setResult(apparel);
 	}, []);
+
+	console.log(result);
 
 	if (loading) {
 		return <Loading text={'분석중 ...'} />;
