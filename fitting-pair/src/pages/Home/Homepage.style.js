@@ -1,5 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import theme from '../../styles/theme';
+
+const shin = keyframes`
+	0% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+`;
 
 const Container = styled.div`
 	${theme.ALIGN.COLUMN_CENTER};
@@ -35,6 +45,7 @@ const LogoWrapper = styled.div`
 	${theme.ALIGN.COLUMN_CENTER};
 
 	img {
+		animation: ${shin} 1.5s 0s linear forwards;
 		width: 80%;
 		margin-bottom: 40px;
 

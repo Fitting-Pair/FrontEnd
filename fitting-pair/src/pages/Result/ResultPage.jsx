@@ -39,7 +39,7 @@ const ResultPage = () => {
 				setResult(data?.data);
 				setLoading(false);
 			},
-			1000 * 60 * 3,
+			1000 * 60 * 3.5,
 		);
 
 		return () => clearTimeout(timer);
