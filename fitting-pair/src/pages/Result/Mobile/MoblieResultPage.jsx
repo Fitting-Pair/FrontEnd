@@ -1,11 +1,11 @@
 import * as S from './MoblieResultPage.style';
 import { MoblieIcon } from '../../../components';
-import resultImg from '../../../assets/images/result.png';
-import { textResult, SelectedApparel } from '../../../constants/result';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const MoblieResultPage = () => {
+	const { state } = useLocation();
+
 	const nav = useNavigate();
 	const date = 'MAY, 13TH';
 
@@ -17,29 +17,48 @@ const MoblieResultPage = () => {
 		<S.Container>
 			<MoblieIcon text={date} />
 			<S.Title>
-				OOO, YOU ARE <span>SQUARE</span> BODY.
+				당신은 <span>{state?.bodyTypeName}</span> 체형입니다.
 			</S.Title>
-			<S.ResultImg src={resultImg} />
+			<S.ResultImg src={state?.objFile} />
 			<S.ContentWrapper>
-				{textResult.map((e, idx) => (
-					<S.ContentBox key={idx}>
-						<div>{e.title}</div>
-						<span>{e.content}</span>
-					</S.ContentBox>
-				))}
+				<S.ContentBox>
+					<div>체형 분석</div>
+					<span>{state?.bodyTypeFeature}</span>
+				</S.ContentBox>
+				<S.ContentBox>
+					<div>코디 주의사항</div>
+					<span>{state?.bodyTypeCareful}</span>
+				</S.ContentBox>
 			</S.ContentWrapper>
 			<S.SeletedWrapper>
-				<h1>SELECTED APPAREL</h1>
+				<h1>나만의 의류 리스트</h1>
 				<S.ApparelWrapper>
-					{SelectedApparel.map(e => (
-						<img
-							src={e.image}
-							key={e.id}
-							onClick={() =>
-								nav(`/my-page/result/detail/${e.id}`, { state: { ...e } })
-							}
-						/>
-					))}
+					<img
+						src={state?.userStylingResponseDto.userTopClothesDto.imageUrl}
+						onClick={() =>
+							nav(
+								`/my-page/result/detail/${state?.userStylingResponseDto.userTopClothesDto.name}`,
+								{
+									state: { ...state?.userStylingResponseDto.userTopClothesDto },
+								},
+							)
+						}
+					/>
+					<img
+						src={
+							state?.userStylingResponseDto.userBottomClothesItemsDto.imageUrl
+						}
+						onClick={() =>
+							nav(
+								`/my-page/result/detail/${state?.userStylingResponseDto.userBottomClothesItemsDto.name}`,
+								{
+									state: {
+										...state?.userStylingResponseDto.userBottomClothesItemsDto,
+									},
+								},
+							)
+						}
+					/>
 				</S.ApparelWrapper>
 			</S.SeletedWrapper>
 		</S.Container>

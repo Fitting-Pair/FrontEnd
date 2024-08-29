@@ -28,6 +28,9 @@ const API_PATH = {
 
 	// result
 	RESULT: '/result',
+
+	// my-page
+	MYPAGE: 'mypage',
 };
 
 export { PAGE_PATH, API_PATH };

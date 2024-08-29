@@ -1,7 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import { logout } from '../../api/user';
 import queryClient from '../../api/queryClient';
-import { QUERY_KEYS } from '../../constants';
 import { useNavigate } from 'react-router-dom';
 
 const useLogout = () => {
@@ -10,7 +9,7 @@ const useLogout = () => {
 		mutationFn: logout,
 		onSuccess: () => {
 			localStorage.clear();
-			queryClient.removeQueries({ queryKey: [QUERY_KEYS.AUTH] });
+			queryClient.clear();
 			nav('/', { replace: true });
 		},
 		onError: error => {

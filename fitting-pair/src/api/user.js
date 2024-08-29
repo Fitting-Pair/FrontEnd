@@ -53,4 +53,12 @@ const getAccessToken = async () => {
 	}
 };
 
-export { signup, login, logout, getAccessToken };
+// my page
+
+const getAllResult = async () => {
+	const { data } = await axiosInstance.get(`${API_PATH.MYPAGE}`);
+
+	return data;
+};
+
+export { signup, login, logout, getAccessToken, getAllResult };
