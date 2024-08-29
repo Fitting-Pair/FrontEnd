@@ -12,7 +12,7 @@ const ResultPaper = ({ result }) => {
 		<S.Container>
 			<S.ResultWrapper>
 				<S.ResultTitle>
-					YOU ARE <span>{bodyTypeName}</span> BODY.
+					당신은 <span>{bodyTypeName}</span> 체형입니다.
 				</S.ResultTitle>
 				<S.BodyImg>
 					<img src={objFile} />
@@ -28,7 +28,7 @@ const ResultPaper = ({ result }) => {
 					</S.ContentWrapper>
 				</S.ResultExplainWrapper>
 				<S.ClothWrapper>
-					<span>SELECTED APPAREL</span>
+					<span>나만의 의류 리스트</span>
 					<section>
 						<div>
 							<img src={userStylingResponseDto.userTopClothesDto.imageUrl} />

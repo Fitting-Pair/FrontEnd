@@ -9,11 +9,13 @@ const Container = styled.div`
 
 const ResultTitle = styled.div`
 	font-family: ${theme.FONT.JIMHURIA_REGULAR};
-	font-size: 2rem;
-	margin-top: 10px;
+	font-size: 1rem;
+	font-weight: 900;
+	margin-top: 15px;
+	letter-spacing: 0.2px;
+	text-align: center;
 	span {
 		color: #ffc791;
-		font-size: 1.3rem;
 	}
 `;
 
@@ -66,8 +68,9 @@ const ClothWrapper = styled.div`
 	span {
 		${theme.ALIGN.COLUMN_CENTER};
 		font-family: ${theme.FONT.JIMHURIA_REGULAR};
-		font-size: 2rem;
-		color: ${theme.COLOR.ORANGE};
+		font-size: 13px;
+		font-weight: 600;
+		margin-bottom: 10px;
 	}
 
 	section {

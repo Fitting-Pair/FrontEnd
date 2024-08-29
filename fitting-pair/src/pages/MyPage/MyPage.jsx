@@ -24,8 +24,10 @@ const MyPage = () => {
 	}
 
 	if (data) {
+		const one = data.length === 1;
+
 		content = (
-			<S.PreviousResultWrapper>
+			<S.PreviousResultWrapper $one={one}>
 				<SwiperComponent>
 					{data?.map(e => (
 						<SwiperSlide key={e.id}>
