@@ -4,6 +4,9 @@ const QUERY_KEYS = {
 
 	// result
 	RESULT: 'result',
+
+	// my-page
+	MYPAGE: 'mypage',
 };
 
 export { QUERY_KEYS };

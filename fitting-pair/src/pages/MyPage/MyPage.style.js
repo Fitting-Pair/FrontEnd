@@ -50,7 +50,7 @@ const PreviousResultWrapper = styled.div`
 	}
 
 	.swiper-slide-next {
-		transform: scale(0.85);
+		transform: ${({ $one }) => ($one ? 'scale(1.05)' : 'scale(0.85)')};
 	}
 
 	.swiper-slide-prev {
@@ -71,6 +71,12 @@ const MyPageDate = styled.div`
 	color: #fff;
 `;
 
+const LoadingBox = styled.div`
+	width: 100%;
+	height: 100%;
+	${theme.ALIGN.ROW_CENTER};
+`;
+
 export {
 	Container,
 	PreviousData,
@@ -78,4 +84,5 @@ export {
 	MyPageDate,
 	BlackLogo,
 	PreviousResultWrapper,
+	LoadingBox,
 };

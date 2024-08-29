@@ -13,36 +13,37 @@ const Container = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-	${theme.ALIGN.COLUMN_CENTER};
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 90%;
-	margin-top: 110px;
+	height: 100%;
+	margin-top: 100px;
 
 	button {
 		background-color: black;
 		color: #fff;
-		border-radius: 30px;
+		border-radius: 13px;
 		min-width: 250px;
 		width: 90%;
 		height: 55px;
 		font-family: ${theme.FONT.ROBOTO_BOLD};
 		font-size: 20px;
+		cursor: pointer;
 	}
 `;
 
-const Image = styled.div`
+const Image = styled.img`
 	${theme.ALIGN.COLUMN_CENTER};
 	min-width: 250px;
 	width: 90%;
-	height: 450px;
+	min-height: 450px;
+	height: 50%;
 	margin-bottom: 25px;
-
 	background-color: #fff;
 	border-radius: 24px;
 	box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
-	img {
-		width: 250px;
-		height: 250px;
-	}
+	object-fit: cover;
 `;
 
 const Logo = styled.div`

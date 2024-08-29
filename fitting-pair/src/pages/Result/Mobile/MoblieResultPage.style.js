@@ -9,9 +9,11 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
+	text-align: center;
 	font-family: ${theme.FONT.JIMHURIA_REGULAR};
-	font-size: 45px;
+	font-size: 32px;
 	margin-top: 100px;
+	font-weight: 900;
 
 	span {
 		color: ${theme.COLOR.ORANGE};
@@ -19,7 +21,7 @@ const Title = styled.div`
 `;
 
 const ResultImg = styled.img`
-	margin: 30px 0px;
+	margin: 30px 0px 50px;
 	width: 300px;
 	height: 300px;
 `;
@@ -32,26 +34,29 @@ const ContentBox = styled.div`
 	${theme.ALIGN.COLUMN_CENTER};
 	font-family: ${theme.FONT.ROBOTO_MEDIUM};
 	margin-bottom: 40px;
-	text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
 	line-height: 24px;
 
 	div {
-		margin-bottom: 40px;
+		font-size: 1.2rem;
+		margin-bottom: 30px;
+		font-weight: bold;
 	}
 
 	span {
 		padding: 0 30px;
 		text-align: center;
+		word-break: keep-all;
+		text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
 	}
 `;
 
 const SeletedWrapper = styled.div`
 	${theme.ALIGN.COLUMN_CENTER};
+	margin-top: 30px;
 
 	h1 {
-		font-size: 55px;
+		font-size: 30px;
 		font-family: ${theme.FONT.JIMHURIA_REGULAR};
-		color: ${theme.COLOR.ORANGE};
 		letter-spacing: 1.1px;
 	}
 `;
@@ -62,10 +67,11 @@ const ApparelWrapper = styled.div`
 
 	img {
 		margin: 20px;
-		border: 8px solid ${theme.COLOR.ORANGE};
+		border: 7px solid ${theme.COLOR.GREEN};
 		border-radius: 24px;
 		width: 250px;
 		height: 250px;
+		object-fit: cover;
 
 		&:hover {
 			box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);

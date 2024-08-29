@@ -64,7 +64,7 @@ const router = createBrowserRouter([
 				element: <MoblieResultPage />,
 			},
 			{
-				path: `${PAGE_PATH.RESULT}/${PAGE_PATH.DETAIL}/:id`,
+				path: `${PAGE_PATH.RESULT}/${PAGE_PATH.DETAIL}/:name`,
 				element: <ResultDetail />,
 			},
 			{

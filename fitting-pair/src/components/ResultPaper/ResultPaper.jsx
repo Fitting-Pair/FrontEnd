@@ -1,33 +1,43 @@
 import * as S from './ResultPaper.style';
-import resultImg from '../../assets/images/result.png';
 
 const ResultPaper = ({ result }) => {
-	const { cloth, text } = result;
+	const {
+		bodyTypeName,
+		objFile,
+		userStylingResponseDto,
+		bodyTypeCareful,
+		bodyTypeFeature,
+	} = result;
 	return (
 		<S.Container>
 			<S.ResultWrapper>
 				<S.ResultTitle>
-					YOU ARE <span>SQUARE</span> BODY.
+					당신은 <span>{bodyTypeName}</span> 체형입니다.
 				</S.ResultTitle>
 				<S.BodyImg>
-					<img src={resultImg} />
+					<img src={objFile} />
 				</S.BodyImg>
 				<S.ResultExplainWrapper>
-					{text.map((e, idx) => (
-						<S.ContentWrapper key={idx}>
-							<span>{e.title}</span>
-							<p>{e.content.substring(0, 200)}</p>
-						</S.ContentWrapper>
-					))}
+					<S.ContentWrapper>
+						<span>체형 특징</span>
+						<p>{bodyTypeFeature.substring(0, 130)}</p>
+					</S.ContentWrapper>
+					<S.ContentWrapper>
+						<span>코디 주의사항</span>
+						<p>{bodyTypeCareful.substring(0, 130)}</p>
+					</S.ContentWrapper>
 				</S.ResultExplainWrapper>
 				<S.ClothWrapper>
-					<span>SELECTED APPAREL</span>
+					<span>나만의 의류 리스트</span>
 					<section>
-						{cloth.map(e => (
-							<div key={e.id}>
-								<img src={e.image} />
-							</div>
-						))}
+						<div>
+							<img src={userStylingResponseDto.userTopClothesDto.imageUrl} />
+						</div>
+						<div>
+							<img
+								src={userStylingResponseDto.userBottomClothesItemsDto.imageUrl}
+							/>
+						</div>
 					</section>
 				</S.ClothWrapper>
 			</S.ResultWrapper>
