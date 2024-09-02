@@ -20,7 +20,7 @@ const Container = styled.div`
 
 const ModifyTitle = styled.div`
 	margin-top: 130px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	${theme.ALIGN.COLUMN_CENTER};
 	font-family: ${theme.FONT.JIMHURIA_REGULAR};
 	font-size: 128px;
@@ -29,62 +29,84 @@ const ModifyTitle = styled.div`
 `;
 
 const ModifyWrapper = styled.div`
-	margin-top: 30px;
-	font-family: ${theme.FONT.JIMHURIA_REGULAR};
-	font-size: 25px;
-	color: #fff;
-	text-align: center;
-	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-	flex-basis: 80px;
+	font-family: ${theme.FONT.ROBOTO_BOLD};
+	display: flex;
+	margin-top: 11px;
+	font-size: 12px;
+	color: #000;
 `;
 const ModifyContainer = styled.div`
-	display: flex;
-	justify-content: space-between;
+	justify-content: flex;
 	align-items: center;
-	width: 80%;
+	width: 84%;
+	margin-top: 5px;
 `;
 
 const InfoWrapper = styled.div`
-	margin-top: 30px;
-	margin-left: 30px;
+	display: flex;
+	margin-top: 10px;
 	font-family: ${theme.FONT.ROBOTO_BOLD};
 	font-size: 12px;
 	width: 100%;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	padding-left: 20px;
-	border-radius: 16px;
 	background-color: #fff;
-	color: #6e6c6a;
-	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-	flex-basis: 300px;
-	align-items: left;
-	flex-direction: left;
+	color: #807E7D;
+	flex-basis: 350px;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	div {
+		display: flex;
+
+		img {
+			display: flex;
+			margin-left: 260px;
+		}
+
+	}
 `;
 
 const EditingWrapper = styled.div`
-	margin-top: 100px;
+	margin-top: 35px;
 	background-color: #7c9c80;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	border-radius: 16px;
-	width: 350px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 362px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	color: #fff;
 	font-family: ${theme.FONT.ROBOTO_BOLD};
-	font-size: 14px;
-	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+	font-size: 12px;
 `;
 
-const DeleteTitle = styled.div`
-	margin-top: 20px;
+const Button = styled.div`
+	margin-top: 35px;
 	font-family: ${theme.FONT.ROBOTO_BOLD};
 	font-size: 12px;
 	color: #fff;
-	width: 77%;
-	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+	text-decoration-line: underline;
+`;
+
+const PlusWrapper = styled.div`
+	margin-top: 5px;
+	font-family: ${theme.FONT.ROBOTO_MEDIUM};
+	font-size: 10px;
+	color: #fff;
+`;
+
+const GenderWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
+
+const BlackLogo = styled.img`
+	position: absolute;
+	bottom: 0;
 `;
 
 export {
@@ -94,5 +116,9 @@ export {
 	ModifyContainer,
 	EditingWrapper,
 	InfoWrapper,
-	DeleteTitle,
+	Button,
+	PlusWrapper,
+	GenderWrapper,
+	BlackLogo,
+	
 };

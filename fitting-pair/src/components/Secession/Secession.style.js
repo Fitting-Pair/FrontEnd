@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import theme from '../../styles/theme';
 
-const DeleteOverlay = styled.div`
+const SecessionOverlay = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -13,7 +13,7 @@ const DeleteOverlay = styled.div`
 	align-items: center;
 `;
 
-const DeleteContent = styled.div`
+const SecessionContent = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -27,12 +27,12 @@ const DeleteContent = styled.div`
 	max-width: 100%;
 
 	p {
-		margin-top: 12px;
+		margin-top: 13px;
 		font-family: ${theme.FONT.ROBOTO_BOLD};
         font-size: 13px;
         color: #6E6C6A;
         margin-top: 16px;
-		line-height: 20px;
+        line-height: 20px;
 	}
 
 `;
@@ -55,23 +55,22 @@ const Button = styled.div`
     font-family: ${theme.FONT.ROBOTO_BOLD};
 `;
 
-const WarningWrapper = styled.div`
-	height: 100px;
-	width: 100px;
-	width: 100%;
+const CheckWrapper = styled.div`
+	height: 80px;
+	width: 80px;
 `;
 
 const CloseButton = styled.div`
     display: flex;
-    width: 100%;
+    width: 85%;
 `;
 
 export { 
 
-    DeleteContent,
-    DeleteOverlay, 
+    SecessionContent,
+    SecessionOverlay, 
     Button, 
-    WarningWrapper, 
+    CheckWrapper, 
     CloseButton,
 
 };
