@@ -20,25 +20,12 @@ const ModifyPage = () => {
 	};
 
 	const [isDeleteVisible, setDeleteVisible] = useState(false);
-	const [isSecessionVisible, setSecessionVisible] = useState(false);
-
 	const openDelete = () => {
 		setDeleteVisible(true);
 	};
 	const closeDelete = () => {
 		setDeleteVisible(false);
 	};
-	const openSecession = () => {
-		setSecessionVisible(true);
-	}
-	const closeSecession =() => {
-		setSecessionVisible(false);
-	}
-
-	const handelDeleteAccount = () => {
-		closeDelete();
-		openSecession();
-	}
 
 	return (
 		<S.Container>
@@ -101,7 +88,7 @@ const ModifyPage = () => {
 				<div>회원 탈퇴</div>
 			</S.Button>
 			<Delete isVisible={isDeleteVisible} onClose={closeDelete} />
-			
+
 			<S.BlackLogo src={Logo} />
 		</S.Container>
 	);

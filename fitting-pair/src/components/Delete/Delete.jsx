@@ -10,28 +10,19 @@ const Delete = ({ isVisible, onClose }) => {
 	const [isDeleteVisible, setDeleteVisible] = useState(false);
 	const [isSecessionVisible, setSecessionVisible] = useState(false);
 
-	const openDelete = () => {
-		setDeleteVisible(true);
-	};
-	const closeDelete = () => {
-		setDeleteVisible(false);
-	};
 	const openSecession = () => {
+		setDeleteVisible(false);
 		setSecessionVisible(true);
 	}
 	const closeSecession =() => {
 		setSecessionVisible(false);
 	}
 
-	const handelDeleteAccount = () => {
-		closeDelete();
-		openSecession();
-	}
 
 	return (
 		<S.DeleteOverlay>
 			<S.DeleteContent>
-				<S.CloseButton onClick={closeDelete}>
+				<S.CloseButton onClick={onClose}>
 					<img src={x} />
 				</S.CloseButton>
 				<S.WarningWrapper>
@@ -44,7 +35,7 @@ const Delete = ({ isVisible, onClose }) => {
 				<S.Button onClick={openSecession}>
 					<div>탈퇴하기</div>
 				</S.Button>
-			<Secession isVisible={isSecessionVisible} onClose={closeSecession} />
+				<Secession isVisible={isSecessionVisible} onClose={closeSecession} />
 
 			</S.DeleteContent>
 		</S.DeleteOverlay>
