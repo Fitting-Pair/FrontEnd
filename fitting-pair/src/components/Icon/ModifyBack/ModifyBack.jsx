@@ -1,4 +1,4 @@
-import * as S from './MovblieIcon.style';
+import * as S from './ModifyBack.style';
 import { FaArrowLeft } from 'react-icons/fa6';
 import LogOut from '../../../assets/images/door.png';
 import useLogout from '../../../hooks/queries/useLogout';
@@ -7,7 +7,7 @@ import { FaPen } from 'react-icons/fa6';
 import { PAGE_PATH } from '../../../constants';
 
 
-const MoblieIcon = ({ text, noBack }) => {
+const ModifyBack = ({ text, noBack }) => {
 	const { id } = useParams();
 	const nav = useNavigate();
 	const { mutate } = useLogout();
@@ -33,4 +33,4 @@ const MoblieIcon = ({ text, noBack }) => {
 	);
 };
 
-export default MoblieIcon;
+export default ModifyBack;

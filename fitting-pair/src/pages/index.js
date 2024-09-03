@@ -8,6 +8,7 @@ import MyPage from './MyPage/MyPage';
 import MoblieResultPage from './Result/Mobile/MoblieResultPage';
 import ResultDetail from './Result/Mobile/Detail/ResultDetail';
 import ModifyPage from './Modify/ModifyPage';
+import EditPage from './Edit/EditPage';
 
 export {
 	Homepage,
@@ -20,4 +21,5 @@ export {
 	MoblieResultPage,
 	ResultDetail,
 	ModifyPage,
+	EditPage,
 };

@@ -14,6 +14,7 @@ import {
 	MoblieResultPage,
 	ModifyPage,
 	ResultDetail,
+	EditPage,
 } from './pages';
 
 const router = createBrowserRouter([
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
 			{
 				path: `${PAGE_PATH.MODIFY}/:id`,
 				element: <ModifyPage />,
+			},
+			{
+				path: `${PAGE_PATH.EDIT}/:id`,
+				element: <EditPage />,
 			},
 		],
 	},

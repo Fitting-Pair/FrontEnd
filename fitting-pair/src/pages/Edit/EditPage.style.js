@@ -18,7 +18,7 @@ const Container = styled.div`
 	);
 `;
 
-const ModifyTitle = styled.div`
+const EditingTitle = styled.div`
 	margin-top: 130px;
 	margin-bottom: 30px;
 	${theme.ALIGN.COLUMN_CENTER};
@@ -28,15 +28,16 @@ const ModifyTitle = styled.div`
 	line-height: 70px;
 `;
 
-const ModifyWrapper = styled.div`
-	font-family: ${theme.FONT.ROBOTO_BOLD};
-	display: flex;
-	margin-top: 11px;
+const EditingWrapper = styled.div`
+	font-family: ${theme.FONT.JIMHURIA_REGULAR};
 	font-size: 12px;
+	margin-top: 11px;
 	color: #000;
+	display: flex;
 `;
-const ModifyContainer = styled.div`
-	justify-content: flex;
+
+const EditingContainer = styled.div`
+	justify-content: space-between;
 	align-items: center;
 	width: 84%;
 	margin-top: 5px;
@@ -52,24 +53,32 @@ const InfoWrapper = styled.div`
 	padding-bottom: 10px;
 	padding-left: 20px;
 	background-color: #fff;
-	color: #807E7D;
-	flex-basis: 350px;
+	color: #6e6c6a;
+	flex-basis: 300px;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	
 
 	div {
 		display: flex;
 
+		input {
+			border: none;
+			color: #B9B9B9;	
+			width: 70%;
+		}
+
 		img {
 			display: flex;
-			margin-left: 260px;
+			margin-left: 160px;
 		}
 
 	}
+
 `;
 
-const EditingWrapper = styled.div`
+const SubmmitWrapper = styled.div`
 	margin-top: 35px;
 	background-color: #7c9c80;
 	padding-top: 10px;
@@ -111,14 +120,13 @@ const BlackLogo = styled.img`
 
 export {
 	Container,
-	ModifyTitle,
-	ModifyWrapper,
-	ModifyContainer,
+	EditingTitle,
 	EditingWrapper,
+	EditingContainer,
+	SubmmitWrapper,
 	InfoWrapper,
 	Button,
 	PlusWrapper,
 	GenderWrapper,
 	BlackLogo,
-	
 };
